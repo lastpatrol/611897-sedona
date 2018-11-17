@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Седона - Гостиницы</title>
+    </head>
+    
+    <body>
+        <header class="main-header">
+            <nav class="main-navigation">
+                <a class="main-header-logo" href="index.html">
+                    <img src="logo.svg" width="90" height="90" alt="Логотип Седоны">
+                </a>
+                <ul class="main-navigation-list">
+                    <li><a href="#">Информация</a></li>
+                    <li><a href="#">Фото и видео</a></li>
+                    <li><a href="#">Карта штата</a></li>
+                    <li class="main-navigation-current"><a>Гостиницы</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="container">
+            <h1 class="visually-hidden">Гостиницы в Седоне</h1>
+            <section class="filters">
+                <h2 class="visually-hidden">Фильтр гостиниц</h2>
+                <!-- По инструкции форму пропускаем. -->
+            </section>
+            <section class="catalog">
+                <h2 class="visually-hidden">Список гостиниц</h2>
+                <!-- Сортировка по логике к списку относится, поэтому её сюда. Div для нее нормально будет? Section как-то жирно кажется. -->
+                <div class="catalog-sort">
+                    <!-- По инструкции сортировку пропускаем. -->
+                </div>
+                <ul class="catalog-list">
+                    <li>
+                        <!-- Подумывал насчет таблицы для каждого элемента, но вроде бы нет смысла. -->
+                        <h3><a href="#">Amara Resort &amp; Spa</a></h3>
+                        <p class="catalog-item-image">
+                            <a href="#">
+                                <img src="unknown.jpg" width="60" height="40" alt="Amara Resort &amp; Spa">
+                            </a>
+                        </p>
+                        <!-- Нормально ли, что span вперемешку с <p>? -->
+                        <span class="catalog-item-category">гостиница</span>
+                        <span class="catalog-item-price">от 4000 ₽</span>
+                        <p class="catalog-item-buttons">
+                            <a class="button button-more" href="#">Подробнее</a>
+                            <a class="button button-book" href="#">Забронировать</a>
+                        </p>
+                        <p class="catalog-item-stars">
+                            <!-- Интересно можно ли и есть ли смысл звездочки текстом сделать? -->
+                            <img src="4stars.jpg" width="50" height="10" alt="4 звезды">
+                        </p>
+                        <span class="catalog-item-rating">рейтинг: 8,5</span>
+                    </li>
+                    
+                    <li>
+                        <h3><a href="#">Desert Quail Inn</a></h3>
+                        <p class="catalog-item-image">
+                            <a href="#">
+                                <img src="unknown.jpg" width="60" height="40" alt="Desert Quail Inn">
+                            </a>
+                        </p>
+                        <span class="catalog-item-category">мотель</span>
+                        <span class="catalog-item-price">от 3000 ₽</span>
+                        <p class="catalog-item-buttons">
+                            <a class="button button-more" href="#">Подробнее</a>
+                            <a class="button button-book" href="#">Забронировать</a>
+                        </p>
+                        <p class="catalog-item-stars">
+                            <img src="3stars.jpg" width="50" height="10" alt="3 звезды">
+                        </p>
+                        <span class="catalog-item-rating">рейтинг: 8,9</span>
+                    </li>
+                    
+                    <li>
+                        <h3><a href="#">Villas at Poco Diablo</a></h3>
+                        <p class="catalog-item-image">
+                            <a href="#">
+                                <img src="unknown.jpg" width="60" height="40" alt="Villas at Poco Diablo">
+                            </a>
+                        </p>
+                        <span class="catalog-item-category">апартаменты</span>
+                        <span class="catalog-item-price">от 2000 ₽</span>
+                        <p class="catalog-item-buttons">
+                            <a class="button button-more" href="#">Подробнее</a>
+                            <a class="button button-book" href="#">Забронировать</a>
+                        </p>
+                        <p class="catalog-item-stars">
+                            <img src="2stars.jpg" width="50" height="10" alt="2 звезды">
+                        </p>
+                        <span class="catalog-item-rating">рейтинг: 9,2</span>
+                    </li>
+                </ul>
+            </section>  
+        </main>
+        
+        <footer class="main-footer">
+            <p class="footer-hashtag">
+                #VisitSedona
+            </p>
+            <ul class="footer-social">
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+            <p class="footer-copyright">
+                <span>website by</span>
+                <a href="https://htmlacademy.ru"><img href="copyright-logo.png" height="20" width="60" alt="HTML-academy"></a>
+            </p>
+        </footer>
+    </body>
+</html>
