@@ -1,0 +1,26 @@
+			width x height
+
+
+header & footer
+site-logo.svg		140 x 71
+twitter.svg		17 x 15
+facebook.svg		12 x 22
+youtube.svg		20 x 16
+copyright.svg		115 x 41
+
+index.html
+welcome.svg		459 x 353
+index-back.jpg		1200 x 773
+calendar.svg		21 x 22
+
+hotels.html
+hotels-back.jpg		1200 x 562
+checkbox-on.svg 	27 x 23
+checkbox-off.svg	23 x 23
+filter-button.svg	20 x 22
+icon-up.svg		11 x 10
+icon-down.svg		11 x 10
+hotel-1.jpg		135 x 90
+hotel-2.jpg		135 x 90
+hotel-3.jpg		135 x 90
+star.svg		18 x 17
