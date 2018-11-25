@@ -49,11 +49,11 @@
                 <!-- Пусть будет get, возможность скопировать ссылку на результаты будет не лишней, я думаю.  -->
                 <form class="hotel-search-form" action="https://echo.htmlacademy.ru" method="get">
                     
-                    <!-- Не стоит ли первые два поля тоже в div'ы положить? -->
-                    <label id="arrival">Дата заезда</label>
+                    <!-- Не стоит ли первые два поля тоже в div'ы положить? Или в абзацы? -->
+                    <label for="arrival">Дата заезда</label>
                     <input type="text" name="arrival" id="arrival" placeholder="24 апреля 2017">
                     
-                    <label id="departure">Дата выезда</label>
+                    <label for="departure">Дата выезда</label>
                     <input type="text" name="departure" id="departure" placeholder="4 июля 2017">
                     
                     <!-- Хм, затрудняюсь, как верстать выбор количества людей. Во-первых, эти поля совсем не похожи на стандартные для выбора числа. Или можно как-то хитро их переоформить? Во-вторых, мне всё-таки кажется, что это обычное текстовое поле плюс две кнопки, стилизованные в единый блок и связанные с помощью JS. -->
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     
-                    <button type="submit">Найти</button>
+                    <button class="button" type="submit">Найти</button>
                 </form>
                 
                 <!-- карта пропущена -->
