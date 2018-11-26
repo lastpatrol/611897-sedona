@@ -42,44 +42,40 @@
                     <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
                 </div>
                 <div class="hotel-search-button">
-                    <!-- Подумал, решил, что тут ссылка, а не кнопка. По умолчанию форма не отображается. Гипотетически на случай неработающего js у пользователя надо предусмотреть возможность перехода по ссылке на отдельную страницу с этой формой. -->
                     <a href="#">Поиск гостиницы в Седоне</a>
                 </div>
-                <!-- Надо ли форму в div положить? Кажется, что нет. Не видел, чтобы так делалось.-->
-                <!-- Пусть будет get, возможность скопировать ссылку на результаты будет не лишней, я думаю.  -->
-                <form class="hotel-search-form" action="https://echo.htmlacademy.ru" method="get">
-                    
-                    <!-- Не стоит ли первые два поля тоже в div'ы положить? Или в абзацы? UPD: решил, что да. -->
-                    <div class="full-width">
-                        <label for="arrival">Дата заезда</label>
-                        <input type="text" name="arrival" id="arrival" placeholder="24 апреля 2017">
-                    </div>
-                    
-                    <div class="full-width">
-                        <label for="departure">Дата выезда</label>
-                        <input type="text" name="departure" id="departure" placeholder="4 июля 2017">
-                    </div>
-                        
-                    <!-- Хм, затрудняюсь, как верстать выбор количества людей. Во-первых, эти поля совсем не похожи на стандартные для выбора числа. Или можно как-то хитро их переоформить? Во-вторых, мне всё-таки кажется, что это обычное текстовое поле плюс две кнопки, стилизованные в единый блок и связанные с помощью JS. -->
-                    <div class="half-width">
-                        <label for="adults">Взрослые</label>
-                        <div class="people-count">
-                            <button type="button" class="adults-minus">-</button>
-                            <input type="text" name="adults" id="adults" placeholder="2" pattern="\d*">
-                            <button type="button" class="adults-plus">+</button>
+                <div class="hotel-search-form">
+                    <form action="https://echo.htmlacademy.ru" method="get">
+                        <div class="full-width">
+                            <label for="arrival">Дата заезда</label>
+                            <input type="text" name="arrival" id="arrival" placeholder="24 апреля 2017">
+                            <button type="button" class="arrival-calendar"></button>
                         </div>
-                    </div>
-                    <div class="half-width">
-                        <label for="children">Дети</label>
-                        <div class="people-count">
-                            <button type="button" class="children-minus">-</button>
-                            <input type="text" name="children" id="children" placeholder="0" pattern="\d*">
-                            <button type="button" class="children-plus">+</button>
+                        <div class="full-width">
+                            <label for="departure">Дата выезда</label>
+                            <input type="text" name="departure" id="departure" placeholder="4 июля 2017">
+                            <button type="button" class="departure-calendar"></button>
                         </div>
-                    </div>
-                    
-                    <button class="button" type="submit">Найти</button>
-                </form>
+                        <div class="half-width">
+                            <label for="adults">Взрослые</label>
+                            <div class="people-count">
+                                <button type="button" class="adults-minus">-</button>
+                                <input type="text" name="adults" id="adults" placeholder="2" pattern="\d*">
+                                <button type="button" class="adults-plus">+</button>
+                            </div>
+                        </div>
+                        <div class="half-width">
+                            <label for="children">Дети</label>
+                            <div class="people-count">
+                                <button type="button" class="children-minus">-</button>
+                                <input type="text" name="children" id="children" placeholder="0" pattern="\d*">
+                                <button type="button" class="children-plus">+</button>
+                            </div>
+                        </div>
+
+                        <button class="button" type="submit">Найти</button>
+                    </form>
+                </div>
                 
                 <!-- карта пропущена -->
             </section>
