@@ -49,12 +49,13 @@
                         <div class="full-width">
                             <label for="arrival">Дата заезда</label>
                             <input type="text" name="arrival" id="arrival" placeholder="24 апреля 2017">
-                            <button type="button" class="arrival-calendar"></button>
+                            <!-- В итоге решил, что картинка будет фоном, а в кнопке скрытая подпись -->
+                            <button type="button" class="calendar arrival-calendar"><span class="visually-hidden">выбор даты заезда</span></button>
                         </div>
                         <div class="full-width">
                             <label for="departure">Дата выезда</label>
                             <input type="text" name="departure" id="departure" placeholder="4 июля 2017">
-                            <button type="button" class="departure-calendar"></button>
+                            <button type="button" class="calendar departure-calendar"><span class="visually-hidden">выбор даты выезда</span></button>
                         </div>
                         <div class="half-width">
                             <label for="adults">Взрослые</label>
