@@ -1,0 +1,53 @@
+
+body {
+    padding: 0px;
+    margin: 0px;
+    
+    /* Думал тут, что наследовать из body на весь сайт, а что прописывать везде, чтобы не запутаться. В итоге решил так: */
+    
+    /* Наследовать (указывать, только если отличается): */
+    font-family: "PTSans", Arial, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    
+    /* Указывать всегда (эти чаще разные): */
+    color: #000000;
+    line-height: 21px;
+    font-size: 14px;
+    
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;   
+}
+
+/*  */
+.main-navigation {
+    color: #000000;
+    line-height: 26px;
+    font-size: 14px;
+    font-weight: bold;
+    
+    background-color: #ffffff;
+}
+
+.main-navigation-list {
+    list-style: none;
+}
+
+.main-navigation-list a {
+    color: #000000;
+}
+
+.main-navigation-list :not(.main-navigation-current) a:hover {
+    color: #81b3d2;
+}
+
+.main-navigation-list :not(.main-navigation-current) a:focus {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.main-navigation-current a {
+    color: #766357; 
+}
