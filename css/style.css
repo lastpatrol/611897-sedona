@@ -22,7 +22,11 @@ a {
     text-decoration: none;   
 }
 
-/*  */
+.visually-hidden {
+    display: none;   
+}
+
+
 .main-navigation {
     color: #000000;
     line-height: 26px;
@@ -44,10 +48,242 @@ a {
     color: #81b3d2;
 }
 
-.main-navigation-list :not(.main-navigation-current) a:focus {
+.main-navigation-list :not(.main-navigation-current) a:active {
     color: rgba(0, 0, 0, 0.3);
 }
 
 .main-navigation-current a {
     color: #766357; 
+}
+
+.welcome {
+    background-color: #8ac6eb;
+    background-image: url(../img/polygon.svg), url(../img/index-back.jpg);
+    background-repeat: no-repeat, no-repeat;
+}
+
+.main-intro {
+    color: #333333;
+    font-size: 14px;
+    line-height: 26px;
+    
+    text-align: center;
+    
+    background-color: #ffffff;
+}
+
+.main-intro b {
+    color: #000000;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;
+}
+
+.hotel-search-intro {
+    color: #333333;
+    font-size: 14px;
+    line-height: 24px;
+    
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.hotel-search-intro b {
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.hotel-search-button {
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.hotel-search-button a {
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: bold;
+    
+    background-color: #766357;
+}
+
+.hotel-search-button a:hover {
+    color: #ffffff;
+    
+    background-color: #604e43;
+}
+
+.hotel-search-button a:active {
+    color: rgba(255, 255, 255, 0.3);
+    
+    background-color: #503e33;
+}
+
+.hotel-search-form,
+.hotel-search-form input,
+.hotel-search-form ::placeholder {
+    font-size: 14px;
+    line-height: 26px;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hotel-search-form {
+    background-color: #ffffff;
+}
+
+.hotel-search-form input[type="text"] {
+    background-color: #f2f2f2;
+    border: none;
+}
+
+.hotel-search-form input[type="text"]:hover {
+    background-color: #ebebeb;
+}
+
+.hotel-search-form input[type="text"]:focus {
+    background-color: #ffffff;
+}
+
+button.calendar {
+    border: none;
+    background-color: #f2f2f2;
+    width: 38px;
+    height: 38px;
+}
+
+button.calendar svg {
+    fill: #cacaca;
+}
+
+button.calendar:hover svg {
+    fill: #000000;
+}
+
+button.calendar:active svg {
+    fill: #81b3d2;
+}
+
+
+.people-count :nth-child(n) {
+    background-color: #f2f2f2;
+    border: none;
+}
+
+button.adults-minus,
+button.children-minus {
+    background-image: url(../img/minus-gray.png); 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 38px;
+    width: 38px;
+}
+
+button.adults-minus:hover,
+button.children-minus:hover {
+    background-image: url(../img/minus-black.png);
+}
+
+button.adults-minus:active,
+button.children-minus:active {
+    background-image: url(../img/minus-blue.png);
+}
+
+button.adults-plus,
+button.children-plus {
+    background-image: url(../img/plus-gray.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 38px;
+    width: 38px;
+}
+
+button.adults-plus:hover,
+button.children-plus:hover {
+    background-image: url(../img/plus-black.png);
+}
+
+button.adults-plus:active,
+button.children-plus:active {
+    background-image: url(../img/plus-blue.png);
+}
+
+.hotel-search-form button[type="submit"] {
+    background-color: #81b3d2;
+    border: none;
+    
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hotel-search-form button[type="submit"]:hover {
+    background-color: #669ec0;
+}
+
+.hotel-search-form button[type="submit"]:active {
+    background-color: #5496bd;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.main-footer {
+    background-color: #ffffff;   
+}
+
+.footer-hashtag {
+    font-size: 21px;
+    line-height: 26px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.footer-social ul {
+    list-style: none;
+}
+
+.footer-social a {
+    background-color: #81b3d2;
+}
+
+.footer-social a:hover {
+    background-color: #669ec0;
+}
+
+.footer-social a:active {
+    background-color: #5496bd;
+}
+
+.footer-social a svg {
+    fill: #ffffff;
+}
+
+.footer-social a:hover svg {
+    fill: #ffffff;
+}
+
+.footer-social a:active svg {
+    fill: #8cb8d1;
+}
+
+.footer-copyright-text {
+    font-size: 14px;
+    line-height: 26px;
+    color: #000000;
+}
+
+/* почему-то не работают цвета и большой размер */
+footer-copyright a svg {
+    fill: #000000;
+}
+
+footer-copyright a:hover svg {
+    fill: #81b3d2;
+}
+
+footer-copyright a:active svg {
+    fill: #cacaca;
 }
