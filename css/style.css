@@ -1,29 +1,26 @@
 
+/* GENERAL */
+
 body {
     padding: 0px;
     margin: 0px;
     
-    /* Думал тут, что наследовать из body на весь сайт, а что прописывать везде, чтобы не запутаться. В итоге решил так: */
     
-    /* Наследовать (указывать, только если отличается): */
-    font-family: "PTSans", Arial, sans-serif;
-    font-weight: normal;
+    font-family: "PT Sans", Arial, sans-serif;
     text-transform: uppercase;
     
-    /* Указывать всегда (эти чаще разные): */
+    /* Посчитал, какие чаще используются */
     color: #000000;
-    line-height: 21px;
+    line-height: 26px;
     font-size: 14px;
+    font-weight: normal;
     
     background-color: #f2f2f2;
 }
 
-a {
-    text-decoration: none;   
-}
-
-/* Есть какой-то способ лучше, чтобы цвет :visited с обычной ссылкой совпадал? Придумал, что цвет можно назначить обертке ссылки, а :visited пусть его наследует. */
+a,
 a:visited {
+    text-decoration: none; 
     color: inherit;   
 }
 
@@ -36,12 +33,9 @@ a:visited {
 
 
 
-/* INDEX */
+/* HEADER */
 
 .main-navigation {
-    color: #000000;
-    line-height: 26px;
-    font-size: 14px;
     font-weight: bold;
     
     background-color: #ffffff;
@@ -63,16 +57,84 @@ a:visited {
     color: #766357; 
 }
 
+
+
+
+
+
+/* FOOTER */
+
+.main-footer {
+    background-color: rgba(255, 255, 255, 0.9);   
+}
+
+.footer-hashtag {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.footer-social ul {
+    list-style: none;
+}
+
+.footer-social a {
+    background-color: #81b3d2;
+    
+    /* временно */
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.footer-social a:hover {
+    background-color: #669ec0;
+}
+
+.footer-social a:active {
+    background-color: #5496bd;
+}
+
+.footer-social a svg {
+    fill: #ffffff;
+}
+
+.footer-social a:hover svg {
+    fill: #ffffff;
+}
+
+.footer-social a:active svg {
+    fill: #8cb8d1;
+}
+
+.footer-copyright a svg {
+    fill: #000000;
+}
+
+.footer-copyright a:hover svg {
+    fill: #81b3d2;
+}
+
+.footer-copyright a:active svg {
+    fill: #cacaca;
+}
+
+
+
+
+
+
+/* INDEX */
+
 .welcome {
-    background-color: #8ac6eb;
+    background-color: #9ff6ea;
     background-image: url(../img/polygon.svg), url(../img/index-back.jpg);
     background-repeat: no-repeat, no-repeat;
+    height: 508px;
+    width: 1200px;
 }
 
 .main-intro {
     color: #333333;
-    font-size: 14px;
-    line-height: 26px;
     
     text-align: center;
     
@@ -80,15 +142,12 @@ a:visited {
 }
 
 .main-intro b {
-    color: #000000;
     font-weight: bold;
     font-size: 21px;
-    line-height: 26px;
 }
 
 .hotel-search-intro {
     color: #333333;
-    font-size: 14px;
     line-height: 24px;
     
     text-align: center;
@@ -96,7 +155,6 @@ a:visited {
 }
 
 .hotel-search-intro b {
-    color: #000000;
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
@@ -105,7 +163,6 @@ a:visited {
 .hotel-search-button {
     color: #ffffff;
     font-size: 21px;
-    line-height: 26px;
     font-weight: bold;
     
     text-align: center;
@@ -135,7 +192,8 @@ a:visited {
     line-height: 26px;
     color: #000000;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: inherit;
+    font-family: inherit;
 }
 
 .hotel-search-form {
@@ -182,37 +240,22 @@ button.calendar:active svg {
     border: none;
 }
 
-/* С кнопками +/- оказалось, что это не шрифт, и svg тоже для них нет. Поэтому сделал png. */
-button.minus {
-    background-image: url(../img/minus-gray.png); 
-    background-position: center;
-    background-repeat: no-repeat;
+.people-count button {
     height: 38px;
     width: 38px;
 }
 
-button.minus:hover {
-    background-image: url(../img/minus-black.png);
+/* Очень долго доходило, что можно самому нарисовать +/- на svg... ^_^ */
+.people-count button svg {
+    fill: rgb(171, 171, 171);
 }
 
-button.minus:active {
-    background-image: url(../img/minus-blue.png);
+.people-count button:hover svg {
+    fill: rgb(0, 0, 0);
 }
 
-button.plus {
-    background-image: url(../img/plus-gray.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 38px;
-    width: 38px;
-}
-
-button.plus:hover {
-    background-image: url(../img/plus-black.png);
-}
-
-button.plus:active {
-    background-image: url(../img/plus-blue.png);
+.people-count button:active svg {
+    fill: rgb(134, 181, 210);
 }
 
 .hotel-search-form button[type="submit"] {
@@ -234,65 +277,6 @@ button.plus:active {
     color: rgba(255, 255, 255, 0.3);
 }
 
-/* По идее сквозь футер должна просвечивать карта, пока непонятно, как это будет реализовано*/
-.main-footer {
-    background-color: rgba(255, 255, 255, 0.9);   
-}
-
-.footer-hashtag {
-    font-size: 21px;
-    line-height: 26px;
-    color: #000000;
-    font-weight: bold;
-}
-
-.footer-social ul {
-    list-style: none;
-}
-
-.footer-social a {
-    background-color: #81b3d2;
-}
-
-.footer-social a:hover {
-    background-color: #669ec0;
-}
-
-.footer-social a:active {
-    background-color: #5496bd;
-}
-
-.footer-social a svg {
-    fill: #ffffff;
-}
-
-.footer-social a:hover svg {
-    fill: #ffffff;
-}
-
-.footer-social a:active svg {
-    fill: #8cb8d1;
-}
-
-.footer-copyright-text {
-    font-size: 14px;
-    line-height: 26px;
-    color: #000000;
-}
-
-/* Почему-то не работают цвета и отображается большой размер. Как вообще подключать svg с возможностью изменять цвет, при этом не загромождая html? */
-footer-copyright a svg {
-    fill: #000000;
-}
-
-footer-copyright a:hover svg {
-    fill: #81b3d2;
-}
-
-footer-copyright a:active svg {
-    fill: #cacaca;
-}
-
 
 
 
@@ -311,8 +295,6 @@ footer-copyright a:active svg {
 h3 {
     font-size: 21px;
     font-weight: bold;
-    line-height: 26px;
-    color: #000000;
 }
 
 h3 a:hover {
@@ -323,19 +305,20 @@ h3 a:active {
     color: rgba(0, 0, 0, 0.3);
 }
 
-/* Стоит ли фон картинкам задавать на случай, если они не загрузятся? Чтобы вместо картинки был блок такого же размера и в среднем такого же цвета? Или так только для фона делают? */
-.catalog-item-image img {
+.catalog-item-image a {
     background-color: rgb(170, 219, 166);
+    height: 90px;
+    width: 135px;
+    
+/* временно */
+    display: block;
 }
 
 .catalog-item-details {
-    font-size: 14px;
     line-height: 21px;
-    color: #000000;
 }
 
 .catalog-item-buttons {
-    font-size: 14px;
     line-height: 21px;
     font-weight: bold;
     color: #ffffff;
@@ -368,17 +351,19 @@ a.button-book:active {
 }
 
 .catalog-item-rating {
-    font-size: 14px;
     line-height: 21px;
     color: #666666;
     
     background-color: #f2f2f2;
 }
 
-/* Делать заданное количество повторений фона получается сложновато, поэтому есть идея повторить по горизонтали, а потом просто контейнеру нужную ширину задать, чтобы определенное количество звезд влезало.
-UPD: не катит. При повторении не хватает пространства между звёздами. Делать несколькими фонами? */
-.catalog-item-stars {
-    background: url(../img/star.svg) repeat-x;
+/* Как оказалось, "background-repeat: space" мало где работает, да еще и повторяет только по вертикали. Придумал сделать на пустых спанах по количеству звезд. Прямо очень нравится идея. :)  */
+.star {
+    background: url(../img/star.svg) no-repeat;
+    width: 18px;
+    height: 17px;
+    display: inline-block;
+    margin: 1px;
 }
 
 
