@@ -22,10 +22,21 @@ a {
     text-decoration: none;   
 }
 
+/* Есть какой-то способ лучше, чтобы цвет :visited с обычной ссылкой совпадал? Придумал, что цвет можно назначить обертке ссылки, а :visited пусть его наследует. */
+a:visited {
+    color: inherit;   
+}
+
 .visually-hidden {
     display: none;   
 }
 
+
+
+
+
+
+/* INDEX */
 
 .main-navigation {
     color: #000000;
@@ -38,10 +49,6 @@ a {
 
 .main-navigation-list {
     list-style: none;
-}
-
-.main-navigation-list a {
-    color: #000000;
 }
 
 .main-navigation-list :not(.main-navigation-current) a:hover {
@@ -96,16 +103,16 @@ a {
 }
 
 .hotel-search-button {
-    text-align: center;
-    background-color: #ffffff;
-}
-
-.hotel-search-button a {
     color: #ffffff;
     font-size: 21px;
     line-height: 26px;
     font-weight: bold;
     
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.hotel-search-button a {
     background-color: #766357;
 }
 
@@ -146,6 +153,8 @@ a {
 
 .hotel-search-form input[type="text"]:focus {
     background-color: #ffffff;
+    border: solid 2px #e5e5e5;
+    outline: none;
 }
 
 button.calendar {
@@ -173,8 +182,8 @@ button.calendar:active svg {
     border: none;
 }
 
-button.adults-minus,
-button.children-minus {
+/* С кнопками +/- оказалось, что это не шрифт, и svg тоже для них нет. Поэтому сделал png. */
+button.minus {
     background-image: url(../img/minus-gray.png); 
     background-position: center;
     background-repeat: no-repeat;
@@ -182,18 +191,15 @@ button.children-minus {
     width: 38px;
 }
 
-button.adults-minus:hover,
-button.children-minus:hover {
+button.minus:hover {
     background-image: url(../img/minus-black.png);
 }
 
-button.adults-minus:active,
-button.children-minus:active {
+button.minus:active {
     background-image: url(../img/minus-blue.png);
 }
 
-button.adults-plus,
-button.children-plus {
+button.plus {
     background-image: url(../img/plus-gray.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -201,13 +207,11 @@ button.children-plus {
     width: 38px;
 }
 
-button.adults-plus:hover,
-button.children-plus:hover {
+button.plus:hover {
     background-image: url(../img/plus-black.png);
 }
 
-button.adults-plus:active,
-button.children-plus:active {
+button.plus:active {
     background-image: url(../img/plus-blue.png);
 }
 
@@ -230,8 +234,9 @@ button.children-plus:active {
     color: rgba(255, 255, 255, 0.3);
 }
 
+/* По идее сквозь футер должна просвечивать карта, пока непонятно, как это будет реализовано*/
 .main-footer {
-    background-color: #ffffff;   
+    background-color: rgba(255, 255, 255, 0.9);   
 }
 
 .footer-hashtag {
@@ -275,7 +280,7 @@ button.children-plus:active {
     color: #000000;
 }
 
-/* почему-то не работают цвета и большой размер */
+/* Почему-то не работают цвета и отображается большой размер. Как вообще подключать svg с возможностью изменять цвет, при этом не загромождая html? */
 footer-copyright a svg {
     fill: #000000;
 }
@@ -287,3 +292,94 @@ footer-copyright a:hover svg {
 footer-copyright a:active svg {
     fill: #cacaca;
 }
+
+
+
+
+
+
+/* HOTELS */
+
+.catalog {
+    background-color: #ffffff;
+}
+
+.catalog-list {
+    list-style: none;   
+}
+
+h3 {
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 26px;
+    color: #000000;
+}
+
+h3 a:hover {
+    color: #81b3d2;
+}
+
+h3 a:active {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+/* Стоит ли фон картинкам задавать на случай, если они не загрузятся? Чтобы вместо картинки был блок такого же размера и в среднем такого же цвета? Или так только для фона делают? */
+.catalog-item-image img {
+    background-color: rgb(170, 219, 166);
+}
+
+.catalog-item-details {
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.catalog-item-buttons {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+a.button-more {
+    background-color: rgb(134, 181, 210);
+}
+
+a.button-more:hover {
+    background-color: rgb(107, 160, 192);
+}
+
+a.button-more:active {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: rgb(89, 152, 189);
+}
+
+a.button-book {
+    background-color: #766357;
+}
+
+a.button-book:hover {
+    background-color: #604e43;
+}
+
+a.button-book:active {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: #503e33;
+}
+
+.catalog-item-rating {
+    font-size: 14px;
+    line-height: 21px;
+    color: #666666;
+    
+    background-color: #f2f2f2;
+}
+
+/* Делать заданное количество повторений фона получается сложновато, поэтому есть идея повторить по горизонтали, а потом просто контейнеру нужную ширину задать, чтобы определенное количество звезд влезало.
+UPD: не катит. При повторении не хватает пространства между звёздами. Делать несколькими фонами? */
+.catalog-item-stars {
+    background: url(../img/star.svg) repeat-x;
+}
+
+
+
