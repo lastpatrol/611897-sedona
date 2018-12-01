@@ -357,14 +357,24 @@ a.button-book:active {
     background-color: #f2f2f2;
 }
 
-/* Как оказалось, "background-repeat: space" мало где работает, да еще и повторяет только по вертикали. Придумал сделать на пустых спанах по количеству звезд. Прямо очень нравится идея. :)  */
-.star {
-    background: url(../img/star.svg) no-repeat;
-    width: 18px;
-    height: 17px;
+/* Таки переделал на "background-repeat: space", пусть будет в коммитах. Но! Пиксель-перфект тут не видать. 4 звезды располагаются чуть уже, чем надо. А если расширить блок, то будет уже 5 звезд. При 5 звездах расхождение будет еще больше. */
+
+.stars {
+    background: url(../img/star.svg) space;
     display: inline-block;
-    margin: 1px;
+    height: 17px;
 }
 
+.stars-4 {
+    width: 89px;
+}
+
+.stars-3 {
+    width: 64px;
+}
+
+.stars-2 {
+    width: 41px;
+}
 
 
