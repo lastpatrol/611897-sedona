@@ -364,6 +364,7 @@ a.button-book:active {
     width: 18px;
     height: 17px;
     display: inline-block;
+    font-size: 0px;
     margin: 1px;
 }
 
