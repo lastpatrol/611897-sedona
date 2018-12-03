@@ -37,8 +37,6 @@ a:visited {
 
 .main-navigation {
     font-weight: bold;
-    
-    background-color: #ffffff;
 }
 
 .main-navigation-list {
@@ -125,13 +123,7 @@ a:visited {
 
 /* INDEX */
 
-.welcome {
-    background-color: #9ff6ea;
-    background-image: url(../img/polygon.svg), url(../img/index-back.jpg);
-    background-repeat: no-repeat, no-repeat;
-    height: 508px;
-    width: 1200px;
-}
+
 
 .main-intro {
     color: #333333;
@@ -171,6 +163,8 @@ a:visited {
 
 .hotel-search-button a {
     background-color: #766357;
+    display: block;
+    padding: 33px;
 }
 
 .hotel-search-button a:hover {
@@ -357,8 +351,6 @@ a.button-book:active {
     background-color: #f2f2f2;
 }
 
-/* В итоге отказался от "background-repeat: space", т. к. пиксель-перфект тут не видать. 4 звезды располагаются чуть уже, чем надо. А если расширить блок, то будет уже 5 звезд. При 5 звездах расхождение будет еще больше. 
-Еще обнаружил, что при нужном размере блока для 4-х звёзд при изменении масштаба в Хроме иногда выскакивает 5-я звезда. Вобщем, не нравится мне этот вариант. На спанах больше контроля. */
 .star {
     background: url(../img/star.svg) no-repeat;
     width: 18px;
@@ -370,3 +362,116 @@ a.button-book:active {
 
 
 
+/* ВРЕМЕННО */
+
+
+
+
+
+/* Как оно вообще в целом? Выглядит-то вроде хорошо, но каша в голове, не напортачил ли где? */
+
+/* СЕТКИ - HEADER */
+
+body {
+    min-width: 1280px;
+}
+
+.main-header {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-navigation {
+    position: relative; 
+    width: 1200px;
+}
+
+/* Для лого сделал центральный пустой элемент меню, и подвинул на него лого. Норм такой вариант? */
+.main-header-logo {
+    width: 140;
+    height: 71;
+    position: absolute;
+    left: 530px;
+}
+
+/* Как ни пробовал, не получается пункты меню точно к макету подогнать. Всё время +/- чуть-чуть. Как вообще это делать? Box-sizing: border-box и паддингами подгонять? */
+.main-navigation-list {
+    margin: 0px;
+    padding: 0px;
+    
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    width: 1200px;
+    justify-content: space-around;
+}
+
+.main-navigation-list li {
+    margin: 0px;    
+
+    padding: 15px;
+    box-sizing: border-box;
+    width: 240px;
+    text-align: center;
+}
+
+
+
+/* СЕТКИ - MAIN */
+
+main {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome {
+    background-color: rgb(221, 233, 242);
+    background-image: url(../img/polygon.svg), url(../img/index-back.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center bottom, 0 -56px;
+    padding-top: 76px; 
+    padding-bottom: 79px;
+    width: 1200px;
+    text-align: center;
+}
+
+.main-intro {
+    width: 1200px;
+    padding-top: 59px;
+    padding-bottom: 56px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* пропущено */
+.features {
+}
+
+.hotel-search {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 1200px;
+}
+
+.hotel-search-intro {
+    padding-top: 57px;
+}
+
+.hotel-search-button {
+    align-self: center;
+    width: 568px;  
+}
+
+.hotel-search-form {
+    align-self: center;
+    width: 568px;
+}
+    
+    
