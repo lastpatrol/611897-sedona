@@ -62,10 +62,6 @@ a:visited {
 
 /* FOOTER */
 
-.main-footer {
-    background-color: rgba(255, 255, 255, 0.9);   
-}
-
 .footer-hashtag {
     font-size: 21px;
     font-weight: bold;
@@ -239,7 +235,6 @@ button.calendar:active svg {
     width: 38px;
 }
 
-/* Очень долго доходило, что можно самому нарисовать +/- на svg... ^_^ */
 .people-count button svg {
     fill: rgb(171, 171, 171);
 }
@@ -278,7 +273,7 @@ button.calendar:active svg {
 
 /* HOTELS */
 
-.catalog {
+.catalog-results {
     background-color: #ffffff;
 }
 
@@ -303,8 +298,6 @@ h3 a:active {
     background-color: rgb(170, 219, 166);
     height: 90px;
     width: 135px;
-    
-/* временно */
     display: block;
 }
 
@@ -361,15 +354,6 @@ a.button-book:active {
 }
 
 
-
-/* ВРЕМЕННО */
-
-
-
-
-
-/* Как оно вообще в целом? Выглядит-то вроде хорошо, но каша в голове, не напортачил ли где? */
-
 /* СЕТКИ - HEADER */
 
 body {
@@ -397,7 +381,8 @@ body {
     left: 530px;
 }
 
-/* Как ни пробовал, не получается пункты меню точно к макету подогнать. Всё время +/- чуть-чуть. Как вообще это делать? Box-sizing: border-box и паддингами подгонять? */
+/* Как ни пробовал, не получается пункты меню точно к макету подогнать. Всё время +/- чуть-чуть. Как вообще это делать? Box-sizing: border-box и паддингами подгонять? Костыльный какой-то метод... 
+Такое же дело с футером. Не стыкуется.*/
 .main-navigation-list {
     margin: 0px;
     padding: 0px;
@@ -405,7 +390,6 @@ body {
     display: flex;
     flex-direction: row;
     background-color: #ffffff;
-    width: 1200px;
     justify-content: space-around;
 }
 
@@ -420,7 +404,7 @@ body {
 
 
 
-/* СЕТКИ - MAIN */
+/* СЕТКИ - INDEX-MAIN */
 
 main {
     padding-left: 40px;
@@ -449,8 +433,9 @@ main {
     flex-direction: column;
 }
 
-/* пропущено */
+
 .features {
+    /* пропущено */
 }
 
 .hotel-search {
@@ -464,6 +449,10 @@ main {
     padding-top: 57px;
 }
 
+.hotel-search-intro :last-child {
+    margin-bottom: 52px;   
+}
+
 .hotel-search-button {
     align-self: center;
     width: 568px;  
@@ -474,4 +463,117 @@ main {
     width: 568px;
 }
     
+
+/* СЕТКИ - FOOTER */
+
+.main-footer {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    align-items: center;   
+    justify-content: space-around;
+}
     
+.main-footer > .container {
+    display: flex;
+    align-items: center;   
+    justify-content: space-around;
+    width: 1200px;
+    min-height: 120px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-social ul {
+    display: flex;
+    align-items: center;   
+    justify-content: space-around;
+    padding: 0px;
+    margin: 0px;
+}
+
+.footer-social li {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.footer-social li:not(:last-child) {
+    margin-right: 6px;
+}
+
+/* Так вообще нормально иконку центровать в ссылке? А то есть ощущение, что слишком крутая технология для такой ерунды. :) */
+.footer-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 48px;
+    margin: 0px;
+}
+
+.footer-copyright {
+}
+
+
+
+/* СЕТКИ - HOTELS-MAIN */
+
+.catalog-results {
+    width: 1200px;        
+}
+
+.catalog-results ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Вопрос на этом примере. Как лучше лучше сделать: левый паддинг элементу списка, или такой же левый маргин картинке? */
+.catalog-item {
+    border-top: 1px rgb(229, 229, 229) solid;
+    
+    margin: 0px;
+    padding-left: 72px;
+    padding-right: 72px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: top;
+    
+}
+
+
+.catalog-item:last-child {
+    border-bottom: 1px rgb(229, 229, 229) solid;
+}
+
+.catalog-item-value {
+    margin-left: auto;   
+}
+
+.catalog-item-image {
+    margin-right: 30px;   
+}
+
+
+.catalog-item-main p,
+.catalog-item-main h3,
+.catalog-item-main a,
+.catalog-item-value p {
+    margin: 0px;   
+}
+
+/* ВРЕМЕННО */
+/*
+.catalog-item-main,
+.catalog-item-image, 
+.catalog-item-value   {
+    outline: 2px red dashed;   
+}
+*/
+
+.catalog-item-main {
+    display: flex;
+    flex-direction: column;
+}
