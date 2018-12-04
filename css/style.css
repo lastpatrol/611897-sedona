@@ -610,12 +610,12 @@ body > .container {
     flex-direction: column;
 }
 
-/* Нормален вариант line-height сделать равной высоте блока в макете? Таким образом легче подобрать вертикальные маргины. И только так получается выровнять верхнюю линию букв залоговка по верхнему краю картинки. */
+/* Смотрю критерии: "Б9. Подключены правильные шрифты, их [...] высота строк [...] равны соответствующим параметрам в макетах и техническом задании." Но, как мне кажется, единственный вариант, чтобы выровнять этот заголовок по верхней линии картинки - таки уменьшить line-height. Остальные элементы блока подогнал маргинами и паддингами, без изменения line-height. */
 .catalog-item-main h3 {
-    line-height: 16px;
     padding: 0px;
     margin: 0px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    line-height: 16px;
 }
 
 .catalog-item-main p,
@@ -625,8 +625,7 @@ body > .container {
 }
 
 .catalog-item-main p:first-of-type {
-    margin-bottom: 19px;
-    line-height: 12px;
+    margin-bottom: 14px;
 }
 
 .catalog-item-buttons {
@@ -634,8 +633,7 @@ body > .container {
 }
 
 .catalog-item-buttons .button {
-    line-height: 11px;
-    padding: 8px 17px;
+    padding: 3px 17px;
 }
 
 .catalog-item-buttons .button:not(:last-child) {
@@ -646,16 +644,15 @@ body > .container {
     display: flex; 
 }
 
-
 .catalog-item-details span {
-    width: 110px;   
+    min-width: 110px;   
 }
 
 .catalog-item-details span:not(:last-child) {
     margin-right: 6px;
 }
 
-110
+
 
 
 
