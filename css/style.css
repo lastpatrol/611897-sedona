@@ -424,7 +424,7 @@ body > .container {
 
 /* СЕТКИ - INDEX-MAIN */
 
-main {
+.main-content {
     display: flex;
     flex-direction: column;
 }
@@ -568,22 +568,22 @@ main {
 }
 
 .catalog-item {
-    border-top: 1px rgb(229, 229, 229) solid;
+    display: flex;
+    align-items: flex-start;
     
     margin: 0px;
     padding-left: 72px;
     padding-right: 72px;
     padding-top: 30px;
     padding-bottom: 30px;
-    display: flex;
-    align-items: flex-start;
     
+    border-top: 1px rgb(229, 229, 229) solid;
 }
-
 
 .catalog-item:last-child {
     border-bottom: 1px rgb(229, 229, 229) solid;
 }
+
 
 .catalog-item-value {
     margin-left: auto;   
@@ -594,16 +594,69 @@ main {
 }
 
 
+/* временно */
+/*
+.catalog-item-main
+{outline: 2px dotted red;}
+.catalog-item-main h3
+{outline: 2px dashed blue;}
+*/
+
+
+.catalog-item-main {
+    align-self: stretch;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* Нормален вариант line-height сделать равной высоте блока в макете? Таким образом легче подобрать вертикальные маргины. И только так получается выровнять верхнюю линию букв залоговка по верхнему краю картинки. */
+.catalog-item-main h3 {
+    line-height: 16px;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 16px;
+}
+
 .catalog-item-main p,
-.catalog-item-main h3,
 .catalog-item-main a,
 .catalog-item-value p {
     margin: 0px;   
 }
 
-
-
-.catalog-item-main {
-    display: flex;
-    flex-direction: column;
+.catalog-item-main p:first-of-type {
+    margin-bottom: 19px;
+    line-height: 12px;
 }
+
+.catalog-item-buttons {
+    display: flex;
+}
+
+.catalog-item-buttons .button {
+    line-height: 11px;
+    padding: 8px 17px;
+}
+
+.catalog-item-buttons .button:not(:last-child) {
+    margin-right: 5px;
+}
+
+.catalog-item-details {
+    display: flex; 
+}
+
+
+.catalog-item-details span {
+    width: 110px;   
+}
+
+.catalog-item-details span:not(:last-child) {
+    margin-right: 6px;
+}
+
+110
+
+
+
+
