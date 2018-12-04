@@ -5,11 +5,9 @@ body {
     padding: 0px;
     margin: 0px;
     
-    
     font-family: "PT Sans", Arial, sans-serif;
     text-transform: uppercase;
     
-    /* Посчитал, какие чаще используются */
     color: #000000;
     line-height: 26px;
     font-size: 14px;
@@ -73,8 +71,6 @@ a:visited {
 
 .footer-social a {
     background-color: #81b3d2;
-    
-    /* временно */
     display: block;
     width: 30px;
     height: 30px;
@@ -132,6 +128,7 @@ a:visited {
 .main-intro b {
     font-weight: bold;
     font-size: 21px;
+    line-height: 21px;
 }
 
 .hotel-search-intro {
@@ -354,26 +351,31 @@ a.button-book:active {
 }
 
 
-/* СЕТКИ - HEADER */
+/* СЕТКИ - GENERAL */
 
 body {
-    min-width: 1280px;
-}
-
-.main-header {
     padding-left: 40px;
     padding-right: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+body > .container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+/* СЕТКИ - HEADER */
+
+.main-header {
 }
 
 .main-navigation {
     position: relative; 
-    width: 1200px;
 }
 
-/* Для лого сделал центральный пустой элемент меню, и подвинул на него лого. Норм такой вариант? */
 .main-header-logo {
     width: 140;
     height: 71;
@@ -381,8 +383,6 @@ body {
     left: 530px;
 }
 
-/* Как ни пробовал, не получается пункты меню точно к макету подогнать. Всё время +/- чуть-чуть. Как вообще это делать? Box-sizing: border-box и паддингами подгонять? Костыльный какой-то метод... 
-Такое же дело с футером. Не стыкуется.*/
 .main-navigation-list {
     margin: 0px;
     padding: 0px;
@@ -402,16 +402,30 @@ body {
     text-align: center;
 }
 
+.main-navigation-list li:nth-child(2) {
+    margin-right: auto;
+}
+
+.main-navigation-list li:nth-child(1),
+.main-navigation-list li:nth-child(2) {
+    padding-left: 73px;
+    text-align: left;
+}
+
+.main-navigation-list li:nth-child(3),
+.main-navigation-list li:nth-child(4) {
+    padding-right: 73px;
+    text-align: right;
+}
+
+
 
 
 /* СЕТКИ - INDEX-MAIN */
 
 main {
-    padding-left: 40px;
-    padding-right: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .welcome {
@@ -420,29 +434,35 @@ main {
     background-repeat: no-repeat, no-repeat;
     background-position: center bottom, 0 -56px;
     padding-top: 76px; 
-    padding-bottom: 79px;
-    width: 1200px;
+    padding-bottom: 71px;
     text-align: center;
 }
 
 .main-intro {
-    width: 1200px;
-    padding-top: 59px;
+    padding-top: 62px;
     padding-bottom: 56px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.main-intro p {
+    margin: 0px;
+    margin-bottom: 25px;
+}
+
+.main-intro > :first-child {
+    width: 450px;
 }
 
 
 .features {
-    /* пропущено */
 }
 
 .hotel-search {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    width: 1200px;
 }
 
 .hotel-search-intro {
@@ -466,21 +486,22 @@ main {
 
 /* СЕТКИ - FOOTER */
 
+
 .main-footer {
-    padding-left: 40px;
-    padding-right: 40px;
     display: flex;
     align-items: center;   
-    justify-content: space-around;
-}
-    
-.main-footer > .container {
-    display: flex;
-    align-items: center;   
-    justify-content: space-around;
-    width: 1200px;
+    justify-content: space-evenly;
     min-height: 120px;
     background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Внутренние колонки футера. Разобрался, как сделать, не задавая ширину. Есть ли какие-то минусы у такого решения? Может лучше ширину задать колонкам? */
+.main-footer > :nth-child(n) {
+    flex-basis: 0;
+    flex-grow: 1;
+    
+    display: flex;
+    justify-content: center;
 }
 
 .footer-social ul {
@@ -501,7 +522,6 @@ main {
     margin-right: 6px;
 }
 
-/* Так вообще нормально иконку центровать в ссылке? А то есть ощущение, что слишком крутая технология для такой ерунды. :) */
 .footer-social a {
     display: flex;
     justify-content: center;
@@ -511,9 +531,26 @@ main {
     margin: 0px;
 }
 
+/* не работает почему-то так выравнивание, если спан и ссылку-лого завернуть в <p>. Убрал <p> и сделал флексом. Попадает в макет, но вроде как-то не семантично... Но может и черт с ним?
+.footer-copyright p {
+    vertical-align: middle;
+}
+*/
+
 .footer-copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
+.footer-copyright a {
+    width: 115px;
+    height: 41px;
+}
+
+.footer-copyright span {
+    margin: 8px;
+}
 
 
 /* СЕТКИ - HOTELS-MAIN */
@@ -529,7 +566,6 @@ main {
     flex-direction: column;
 }
 
-/* Вопрос на этом примере. Как лучше лучше сделать: левый паддинг элементу списка, или такой же левый маргин картинке? */
 .catalog-item {
     border-top: 1px rgb(229, 229, 229) solid;
     
@@ -539,7 +575,7 @@ main {
     padding-top: 30px;
     padding-bottom: 30px;
     display: flex;
-    align-items: top;
+    align-items: flex-start;
     
 }
 
@@ -564,14 +600,7 @@ main {
     margin: 0px;   
 }
 
-/* ВРЕМЕННО */
-/*
-.catalog-item-main,
-.catalog-item-image, 
-.catalog-item-value   {
-    outline: 2px red dashed;   
-}
-*/
+
 
 .catalog-item-main {
     display: flex;
