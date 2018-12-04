@@ -377,10 +377,11 @@ body > .container {
 }
 
 .main-header-logo {
-    width: 140;
-    height: 71;
+    width: 140px;
+    height: 71px;
     position: absolute;
-    left: 530px;
+    left: 50%;
+    transform: translateX(-70px);
 }
 
 .main-navigation-list {
