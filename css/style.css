@@ -494,84 +494,70 @@ body > .container {
 }
 
 
+/* ФОРМА ПОИСКА ОТЕЛЕЙ */
 
-
-/* форма поиска отелей */
 .hotel-search-form {
     align-self: center;
     box-sizing: border-box;
     width: 568px;
+    
     display: flex;
-    padding: 55px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 55px;
+    justify-content: flex-start;
+    
+    
 }
-
-.hotel-search-form label {
-    padding-top: 5px;
-    flex-grow: 1;
-}
-
-
-
-
-/* поля с датами */
-.full-width {
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-between;
-}
-
 
 .date-input {
+    box-sizing: border-box;
+    width:  346px;
     display: flex;
-    width: 346px;   
     margin-bottom: 30px;
 }
 
-.date-input input {
-    flex-grow: 1;
+.date-input input { 
     padding-left: 12px;
-}
-
-
-
-
-/* поля с людьми */
-.half-width {
-    display: flex;
-    justify-content: space-between;
-    flex-basis: 0;
     flex-grow: 1;
 }
 
 .people-count {
-    display: flex;
+    box-sizing: border-box;
+    width: 114px;
+}
+
+
+
+.hotel-search-form label {
+    box-sizing: border-box;
+    width: 110px;
+}
+
+.people-count {
+    display: flex;   
 }
 
 .people-count input {
-    width: 38px; 
+    width: 38px;   
     text-align: center;
 }
 
-.half-width:nth-of-type(4) label {
-    padding-left: 50px;
+.hotel-search-form label {
+    padding-top: 5px;
 }
-    
+
+.hotel-search-form > label:nth-of-type(4) {
+    margin-left: auto;   
+    padding-left: 45px;
+}
 
 
-
-/* кнопка отправки */
 .hotel-search-form button.submit {
     width:  300px;  
     padding: 16px;
     flex-grow: 1;
     margin-top: 54px;
-
 }
-
-
-
 
 
 
