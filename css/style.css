@@ -345,9 +345,6 @@ a.button-book:active {
     background: url(../img/star.svg) no-repeat;
     width: 18px;
     height: 17px;
-    display: inline-block;
-    font-size: 0px;
-    margin: 1px;
 }
 
 
@@ -585,10 +582,6 @@ body > .container {
 }
 
 
-.catalog-item-value {
-    margin-left: auto;   
-}
-
 .catalog-item-image {
     margin-right: 30px;   
 }
@@ -605,6 +598,7 @@ body > .container {
 
 .catalog-item-main {
     align-self: stretch;
+    margin-right: auto;
     
     display: flex;
     flex-direction: column;
@@ -619,8 +613,7 @@ body > .container {
 }
 
 .catalog-item-main p,
-.catalog-item-main a,
-.catalog-item-value p {
+.catalog-item-main a {
     margin: 0px;   
 }
 
@@ -654,6 +647,29 @@ body > .container {
 
 
 
+/* временно */
+/*.catalog-item-value {outline: 2px dotted red;}*/
 
+.catalog-item-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.catalog-item-stars {
+    margin: 0px;
+    margin-bottom: 46px;
+    
+    display: flex;
+}
+
+.star:not(:last-child) {
+    margin-right: 6px;
+}
+
+.catalog-item-rating {
+    margin: 0px;
+    padding: 3px 12px;
+}
 
 
