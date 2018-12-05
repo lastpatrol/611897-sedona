@@ -166,7 +166,7 @@ img {
 .hotel-search-button a {
     background-color: #766357;
     display: block;
-    padding: 33px;
+    padding: 30px;
 }
 
 .hotel-search-button a:hover {
@@ -207,16 +207,22 @@ img {
 
 .hotel-search-form input[type="text"]:focus {
     background-color: #ffffff;
-    border: solid 2px #e5e5e5;
-    outline: none;
+    outline: solid 2px #e5e5e5;
 }
 
-button.calendar {
+button.calendar,
+.people-count button {
     border: none;
     background-color: #f2f2f2;
     width: 38px;
     height: 38px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 button.calendar svg {
     fill: #cacaca;
@@ -236,7 +242,7 @@ button.calendar:active svg {
     border: none;
 }
 
-.people-count button {
+ {
     height: 38px;
     width: 38px;
 }
@@ -261,6 +267,8 @@ button.calendar:active svg {
     font-size: 21px;
     font-weight: bold;
     text-align: center;
+    text-transform: inherit;
+    font-family: inherit;
 }
 
 .hotel-search-form button[type="submit"]:hover {
@@ -485,11 +493,88 @@ body > .container {
     width: 568px;  
 }
 
+
+
+
+/* форма поиска отелей */
 .hotel-search-form {
     align-self: center;
+    box-sizing: border-box;
     width: 568px;
+    display: flex;
+    padding: 55px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.hotel-search-form label {
+    padding-top: 5px;
+    flex-grow: 1;
+}
+
+
+
+
+/* поля с датами */
+.full-width {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+
+.date-input {
+    display: flex;
+    width: 346px;   
+    margin-bottom: 30px;
+}
+
+.date-input input {
+    flex-grow: 1;
+    padding-left: 12px;
+}
+
+
+
+
+/* поля с людьми */
+.half-width {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.people-count {
+    display: flex;
+}
+
+.people-count input {
+    width: 38px; 
+    text-align: center;
+}
+
+.half-width:nth-of-type(4) label {
+    padding-left: 50px;
 }
     
+
+
+
+/* кнопка отправки */
+.hotel-search-form button.submit {
+    width:  300px;  
+    padding: 16px;
+    flex-grow: 1;
+    margin-top: 54px;
+
+}
+
+
+
+
+
+
 
 /* СЕТКИ - FOOTER */
 
@@ -637,7 +722,6 @@ body > .container {
 
 .catalog-item-buttons {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .catalog-item-buttons .button {
