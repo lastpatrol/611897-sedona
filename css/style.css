@@ -1,3 +1,14 @@
+/* ВРЕМЕННО */
+
+/*
+.hotel-search-form label {outline: 2px dashed red;}
+.hotel-search-form div {outline: 2px dotted green;}
+.hotel-search-form input {outline: 1px solid purple;}
+.hotel-search-form  button {outline: 2px dashed orange;}
+*/
+
+
+
 
 /* GENERAL */
 
@@ -71,6 +82,8 @@ img {
 .footer-hashtag {
     font-size: 21px;
     font-weight: bold;
+    padding-left: 72px;
+    padding-right: 72px;
 }
 
 .footer-social ul {
@@ -79,9 +92,6 @@ img {
 
 .footer-social a {
     background-color: #81b3d2;
-    display: block;
-    width: 30px;
-    height: 30px;
 }
 
 .footer-social a:hover {
@@ -146,6 +156,10 @@ img {
     
     text-align: center;
     background-color: #ffffff;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hotel-search-intro b {
@@ -308,18 +322,12 @@ h3 a:active {
     color: rgba(0, 0, 0, 0.3);
 }
 
-.catalog-item-image a {
-    background-color: rgb(170, 219, 166);
-    height: 90px;
-    width: 135px;
-    display: block;
-}
-
-.catalog-item-details {
+.catalog-item-category,
+.catalog-item-price {
     line-height: 21px;
 }
 
-.catalog-item-buttons {
+.catalog-item-main .button {
     line-height: 21px;
     font-weight: bold;
     color: #ffffff;
@@ -466,6 +474,11 @@ body > .container {
     margin-bottom: 25px;
 }
 
+.main-intro p, 
+.hotel-search-intro p {
+    max-width: 800px;   
+}
+
 .main-intro > :first-child {
     width: 450px;
 }
@@ -504,16 +517,44 @@ body > .container {
     display: flex;
     flex-wrap: wrap;
     padding: 55px;
+    padding-top: 40px;
+    
+    align-items: flex-end;
     justify-content: flex-start;
-    
-    
 }
+
+.hotel-search-form input {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
 
 .date-input {
     box-sizing: border-box;
     width:  346px;
     display: flex;
-    margin-bottom: 30px;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.people-count {
+    box-sizing: border-box;
+    width: 114px;
+    display: flex;   
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+
+
+.hotel-search-form label {
+    box-sizing: border-box;
+    width: 112px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 16px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .date-input input { 
@@ -521,34 +562,17 @@ body > .container {
     flex-grow: 1;
 }
 
-.people-count {
-    box-sizing: border-box;
-    width: 114px;
-}
 
-
-
-.hotel-search-form label {
-    box-sizing: border-box;
-    width: 110px;
-}
-
-.people-count {
-    display: flex;   
-}
 
 .people-count input {
     width: 38px;   
     text-align: center;
 }
 
-.hotel-search-form label {
-    padding-top: 5px;
-}
-
 .hotel-search-form > label:nth-of-type(4) {
     margin-left: auto;   
-    padding-left: 45px;
+    text-align: right;
+    padding-right: 27px;
 }
 
 
@@ -556,7 +580,7 @@ body > .container {
     width:  300px;  
     padding: 16px;
     flex-grow: 1;
-    margin-top: 54px;
+    margin-top: 38px;
 }
 
 
@@ -573,7 +597,6 @@ body > .container {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* Внутренние колонки футера. Разобрался, как сделать, не задавая ширину. Есть ли какие-то минусы у такого решения? Может лучше ширину задать колонкам? */
 .main-footer > :nth-child(n) {
     flex-basis: 0;
     flex-grow: 1;
@@ -619,6 +642,9 @@ body > .container {
     display: flex;
     justify-content: center;
     align-items: center; 
+    
+    padding-left: 72px;
+    padding-right: 72px;
 }
 
 .footer-copyright a {
@@ -650,8 +676,9 @@ body > .container {
     margin: 0px;
     padding-left: 72px;
     padding-right: 72px;
-/*    padding-top: 25px;*/
     padding-bottom: 30px;
+    /* для разных дочерних нужны разные отступы сверху, задам их верхними паддингами дочерних */
+    padding-top: 0px;
     
     border-top: 1px rgb(229, 229, 229) solid;
 }
@@ -661,80 +688,73 @@ body > .container {
 }
 
 
+/* Если добавить картинку меньше, чем надо, то блок не ужмется, вртикальная стройность карточек не нарушится. */
+/*
 .catalog-item-image {
+    width: 135px;
     margin-right: 30px;   
     padding-top: 30px;
+    display: flex;
+    align-items: flex-start;
 }
-
-
-/* временно */
-/*
-.catalog-item-main
-{outline: 2px dotted red;}
-.catalog-item-main h3
-{outline: 2px dashed blue;}
 */
 
 
+/* Проверил на переполнение картинками больших размеров. Если размер меньше, чем надо, то искажаются пропорции, но это, думаю, не критично. */
+.catalog-item-image {
+    background-color: rgb(170, 219, 166);
+    width: 135px;
+    max-height: 90px;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    
+    margin-right: 30px;   
+    margin-top: 30px;
+    display: flex;
+}
+
+.catalog-item-image img {
+    display: block;
+}
+
 .catalog-item-main {
-    align-self: stretch;
     margin-right: auto;
     
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     padding-top: 25px;
     
-    /* на случай переполнения заголовка */
+    /* чтобы не наезжал на блок рейтинга */
     max-width: 750px;
 }
 
-.catalog-item-main h3 {
+.catalog-item-main > h3 {
     padding: 0px;
     margin: 0px;
     margin-bottom: 7px;
-    line-height: 26px;
     
-    
-}
-
-.catalog-item-main p,
-.catalog-item-main a {
-    margin: 0px;   
-}
-
-.catalog-item-main p:first-of-type {
-    margin-bottom: 14px;
-}
-
-.catalog-item-buttons {
-    display: flex;
-}
-
-.catalog-item-buttons .button {
-    padding: 3px 17px;
-}
-
-.catalog-item-buttons .button:not(:last-child) {
-    margin-right: 5px;
+    /* в родительском блоке не заданы боковые паддинги, поэтому h3 растянется на всю длину, а соседние блоки перенесутся вниз */
+    width: 100%;
 }
 
 .catalog-item-details {
-    display: flex; 
-    flex-shrink: 0;
-}
-
-.catalog-item-details span:not(:last-child) {
-    margin-right: 6px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
 }
 
 .catalog-item-details span {
+    margin-bottom: 14px; 
+}
+
+.catalog-item-details .button {
+    box-sizing: border-box;
+    padding: 3px 17px;
     min-width: 110px;
 }
 
-
-/* временно */
-/*.catalog-item-value {outline: 2px dotted red;}*/
-
+/* это - дочерний флекс-элемент флекса .catalog-item с горизонтальным потоком, он поэтому тянется на всю высоту родителя. Т. е. если сосед .catalog-item-main растянет родителя по высоте, то .catalog-item-value тоже растянется до низу. Поэтому не задаем _фиксированные_ вертикальные маргины для звездочек или рейтинга. */
 .catalog-item-value {
     display: flex;
     flex-direction: column;
@@ -746,10 +766,10 @@ body > .container {
 
 .catalog-item-stars {
     margin: 0px;
-    margin-bottom: 46px;
+    margin-bottom: 20px;
     
     display: flex;
-    flex-wrap: wrap;
+    
 }
 
 .star:not(:last-child) {
@@ -763,6 +783,9 @@ body > .container {
     padding-bottom: 3px;
     padding-left: 15px;
     padding-right: 13px;
+    
+    box-sizing: border-box;
+    min-width: 110px;
 }
 
 
