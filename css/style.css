@@ -1,15 +1,3 @@
-/* ВРЕМЕННО */
-
-/*
-.hotel-search-form label {outline: 2px dashed red;}
-.hotel-search-form div {outline: 2px dotted green;}
-.hotel-search-form input {outline: 1px solid purple;}
-.hotel-search-form  button {outline: 2px dashed orange;}
-*/
-
-
-
-
 /* GENERAL */
 
 body {
@@ -34,12 +22,28 @@ body {
 a,
 a:visited {
     text-decoration: none; 
+}
+
+a:visited {
     color: inherit;   
 }
 
-/* TODO */
-.visually-hidden {
-    display: none;   
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 img {
@@ -82,8 +86,6 @@ img {
 .footer-hashtag {
     font-size: 21px;
     font-weight: bold;
-    padding-left: 72px;
-    padding-right: 72px;
 }
 
 .footer-social ul {
@@ -206,6 +208,10 @@ img {
     font-family: inherit;
 }
 
+.hotel-search-form ::placeholder {
+color: #cacaca;
+}
+
 .hotel-search-form {
     background-color: #ffffff;
 }
@@ -227,7 +233,6 @@ img {
 button.calendar,
 .people-count button {
     border: none;
-    background-color: #f2f2f2;
     width: 38px;
     height: 38px;
     
@@ -236,7 +241,15 @@ button.calendar,
     align-items: center;
 }
 
+.people-count button {
+     background-color: #f2f2f2;  
+}
 
+button.calendar {
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    right: 0px;
+}
 
 button.calendar svg {
     fill: #cacaca;
@@ -403,7 +416,6 @@ body > .container {
     transform: translateX(-70px);
 }
 
-/* Учел возможность переполнения лишними пунктами меню */
 .main-navigation-list {
     margin: 0px;
     padding: 0px;
@@ -414,7 +426,6 @@ body > .container {
     flex-wrap: wrap;
 }
 
-/* Высота не зафиксирована, при переполнении текстом она увеличивается. */
 .main-navigation-list li {
     margin: 0px;    
 
@@ -423,8 +434,8 @@ body > .container {
     width: 240px;
 }
 
-/* При переполнении пунктами по центру визуально будет оставаться пустое место. */
-.main-navigation-list li:nth-child(4n+2) {
+/* При переполнении по центру будет оставаться пустое место. */
+.main-navigation-list li:nth-child(4n+2) { 
     margin-right: 240px;
 }
 
@@ -450,7 +461,6 @@ body > .container {
     flex-direction: column;
 }
 
-/* Высота блока с пейзажем не зафиксирована. При изменении размеров содержимого блока белая маска сдвигается вниз/вверх. */
 .welcome {
     background-color: rgb(221, 233, 242);
     background-image: url(../img/polygon.svg), url(../img/index-back.jpg);
@@ -474,9 +484,13 @@ body > .container {
     margin-bottom: 25px;
 }
 
-.main-intro p, 
-.hotel-search-intro p {
+.main-intro p {
     max-width: 800px;   
+}
+
+.hotel-search-intro p {
+    max-width: 550px;
+    margin-bottom: 10px;
 }
 
 .main-intro > :first-child {
@@ -497,8 +511,8 @@ body > .container {
     padding-top: 57px;
 }
 
-.hotel-search-intro :last-child {
-    margin-bottom: 52px;   
+.hotel-search-intro > :last-child {
+    margin-bottom: 47px;   
 }
 
 .hotel-search-button {
@@ -535,6 +549,7 @@ body > .container {
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .people-count {
@@ -605,6 +620,13 @@ body > .container {
     justify-content: center;
 }
 
+
+.footer-hashtag > *,
+.footer-social > *
+.footer-copyright {
+    max-width: 80%;   
+}
+
 .footer-social ul {
     display: flex;
     align-items: center;   
@@ -632,19 +654,19 @@ body > .container {
     margin: 0px;
 }
 
-/* не работает почему-то так выравнивание, если спан и ссылку-лого завернуть в <p>. Убрал <p> и сделал флексом. Попадает в макет, но вроде как-то не семантично... Но может и черт с ним?
-.footer-copyright p {
-    vertical-align: middle;
-}
-*/
-
 .footer-copyright {
     display: flex;
     justify-content: center;
     align-items: center; 
-    
-    padding-left: 72px;
-    padding-right: 72px;
+}
+
+.footer-copyright > p {
+    flex-basis: 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
 }
 
 .footer-copyright a {
@@ -677,8 +699,9 @@ body > .container {
     padding-left: 72px;
     padding-right: 72px;
     padding-bottom: 30px;
-    /* для разных дочерних нужны разные отступы сверху, задам их верхними паддингами дочерних */
-    padding-top: 0px;
+    
+    /* вместо этого будут разные верхние паддинги у дочерних */
+    padding-top: 0px; 
     
     border-top: 1px rgb(229, 229, 229) solid;
 }
@@ -687,20 +710,6 @@ body > .container {
     border-bottom: 1px rgb(229, 229, 229) solid;
 }
 
-
-/* Если добавить картинку меньше, чем надо, то блок не ужмется, вртикальная стройность карточек не нарушится. */
-/*
-.catalog-item-image {
-    width: 135px;
-    margin-right: 30px;   
-    padding-top: 30px;
-    display: flex;
-    align-items: flex-start;
-}
-*/
-
-
-/* Проверил на переполнение картинками больших размеров. Если размер меньше, чем надо, то искажаются пропорции, но это, думаю, не критично. */
 .catalog-item-image {
     background-color: rgb(170, 219, 166);
     width: 135px;
@@ -726,7 +735,7 @@ body > .container {
     padding-top: 25px;
     
     /* чтобы не наезжал на блок рейтинга */
-    max-width: 750px;
+    max-width: 750px; 
 }
 
 .catalog-item-main > h3 {
@@ -734,8 +743,8 @@ body > .container {
     margin: 0px;
     margin-bottom: 7px;
     
-    /* в родительском блоке не заданы боковые паддинги, поэтому h3 растянется на всю длину, а соседние блоки перенесутся вниз */
-    width: 100%;
+    /* h3 тянется на всю длину, а соседние блоки перенесутся вниз */
+    width: 100%; 
 }
 
 .catalog-item-details {
@@ -754,8 +763,8 @@ body > .container {
     min-width: 110px;
 }
 
-/* это - дочерний флекс-элемент флекса .catalog-item с горизонтальным потоком, он поэтому тянется на всю высоту родителя. Т. е. если сосед .catalog-item-main растянет родителя по высоте, то .catalog-item-value тоже растянется до низу. Поэтому не задаем _фиксированные_ вертикальные маргины для звездочек или рейтинга. */
-.catalog-item-value {
+/* тянется на всю высоту, т. к. с горизонтальным потоком */
+.catalog-item-value { 
     display: flex;
     flex-direction: column;
     align-items: flex-end;
