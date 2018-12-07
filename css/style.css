@@ -22,10 +22,7 @@ body {
 a,
 a:visited {
     text-decoration: none; 
-}
-
-a:visited {
-    color: inherit;   
+    color: inherit;
 }
 
 .visually-hidden:not(:focus):not(:active),
@@ -64,6 +61,7 @@ img {
     list-style: none;
 }
 
+/* Да, тройная вложенность, но лишние классы не хочется воротить */
 .main-navigation-list :not(.main-navigation-current) a:hover {
     color: #81b3d2;
 }
@@ -92,39 +90,39 @@ img {
     list-style: none;
 }
 
-.footer-social a {
+a.footer-social-link {
     background-color: #81b3d2;
 }
 
-.footer-social a:hover {
+a.footer-social-link:hover {
     background-color: #669ec0;
 }
 
-.footer-social a:active {
+a.footer-social-link:active {
     background-color: #5496bd;
 }
 
-.footer-social a svg {
+a.footer-social-link svg {
     fill: #ffffff;
 }
 
-.footer-social a:hover svg {
+a.footer-social-link:hover svg {
     fill: #ffffff;
 }
 
-.footer-social a:active svg {
+a.footer-social-link:active svg {
     fill: #8cb8d1;
 }
 
-.footer-copyright a svg {
+a.footer-copyright-logo svg {
     fill: #000000;
 }
 
-.footer-copyright a:hover svg {
+a.footer-copyright-logo:hover svg {
     fill: #81b3d2;
 }
 
-.footer-copyright a:active svg {
+a.footer-copyright-logo:active svg {
     fill: #cacaca;
 }
 
@@ -134,8 +132,6 @@ img {
 
 
 /* INDEX */
-
-
 
 .main-intro {
     color: #333333;
@@ -269,20 +265,18 @@ button.calendar:active svg {
     border: none;
 }
 
- {
-    height: 38px;
-    width: 38px;
-}
-
-.people-count button svg {
+button.adults svg,
+button.children svg {
     fill: rgb(171, 171, 171);
 }
 
-.people-count button:hover svg {
+button.adults:hover svg,
+button.children:hover svg {
     fill: rgb(0, 0, 0);
 }
 
-.people-count button:active svg {
+button.adults:active svg,
+button.children:active svg {
     fill: rgb(134, 181, 210);
 }
 
@@ -386,9 +380,11 @@ a.button-book:active {
 }
 
 
+
+
+
+
 /* СЕТКИ - GENERAL */
-
-
 
 body > .container {
     width: 1200px;
@@ -454,6 +450,8 @@ body > .container {
 
 
 
+
+
 /* СЕТКИ - INDEX-MAIN */
 
 .main-content {
@@ -482,21 +480,12 @@ body > .container {
 .main-intro p {
     margin: 0px;
     margin-bottom: 25px;
-}
-
-.main-intro p {
-    max-width: 800px;   
-}
-
-.hotel-search-intro p {
-    max-width: 550px;
-    margin-bottom: 10px;
+    max-width: 800px;
 }
 
 .main-intro > :first-child {
     width: 450px;
 }
-
 
 .features {
 }
@@ -511,6 +500,11 @@ body > .container {
     padding-top: 57px;
 }
 
+.hotel-search-intro p {
+    max-width: 550px;
+    margin-bottom: 10px;
+}
+
 .hotel-search-intro > :last-child {
     margin-bottom: 47px;   
 }
@@ -519,6 +513,10 @@ body > .container {
     align-self: center;
     width: 568px;  
 }
+
+
+
+
 
 
 /* ФОРМА ПОИСКА ОТЕЛЕЙ */
@@ -552,6 +550,11 @@ body > .container {
     position: relative;
 }
 
+.date-input input { 
+    padding-left: 12px;
+    flex-grow: 1;
+}
+
 .people-count {
     box-sizing: border-box;
     width: 114px;
@@ -560,7 +563,10 @@ body > .container {
     margin-bottom: 15px;
 }
 
-
+.people-count input {
+    width: 38px;   
+    text-align: center;
+}
 
 .hotel-search-form label {
     box-sizing: border-box;
@@ -570,18 +576,6 @@ body > .container {
     padding-right: 16px;
     margin-top: 15px;
     margin-bottom: 15px;
-}
-
-.date-input input { 
-    padding-left: 12px;
-    flex-grow: 1;
-}
-
-
-
-.people-count input {
-    width: 38px;   
-    text-align: center;
 }
 
 .hotel-search-form > label:nth-of-type(4) {
@@ -601,8 +595,9 @@ body > .container {
 
 
 
-/* СЕТКИ - FOOTER */
 
+
+/* СЕТКИ - FOOTER */
 
 .main-footer {
     display: flex;
@@ -615,15 +610,13 @@ body > .container {
 .main-footer > :nth-child(n) {
     flex-basis: 0;
     flex-grow: 1;
-    
     display: flex;
     justify-content: center;
 }
 
-
-.footer-hashtag > *,
-.footer-social > *
-.footer-copyright {
+.footer-hashtag > :nth-child(n),
+.footer-social > :nth-child(n),
+.footer-copyright > :nth-child(n) {
     max-width: 80%;   
 }
 
@@ -677,6 +670,10 @@ body > .container {
 .footer-copyright span {
     margin: 8px;
 }
+
+
+
+
 
 
 /* СЕТКИ - HOTELS-MAIN */
