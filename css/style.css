@@ -61,16 +61,17 @@ img {
     list-style: none;
 }
 
-/* Да, тройная вложенность, но лишние классы не хочется воротить */
-.main-navigation-list :not(.main-navigation-current) a:hover {
+.main-navigation-list a:hover {
     color: #81b3d2;
 }
 
-.main-navigation-list :not(.main-navigation-current) a:active {
+.main-navigation-list a:active {
     color: rgba(0, 0, 0, 0.3);
 }
 
-.main-navigation-current a {
+.main-navigation-current a,
+.main-navigation-current a:hover,
+.main-navigation-current a:active {
     color: #766357; 
 }
 
@@ -148,6 +149,7 @@ a.footer-copyright-logo:active svg {
     line-height: 21px;
 }
 
+
 .hotel-search-intro {
     color: #333333;
     line-height: 24px;
@@ -166,28 +168,28 @@ a.footer-copyright-logo:active svg {
     line-height: 36px;
 }
 
-.hotel-search-button {
+
+a.hotel-search-button {
+    background-color: #766357;
+    display: block;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 568px;
+    
     color: #ffffff;
     font-size: 21px;
     font-weight: bold;
     
     text-align: center;
-    background-color: #ffffff;
 }
 
-.hotel-search-button a {
-    background-color: #766357;
-    display: block;
-    padding: 30px;
-}
-
-.hotel-search-button a:hover {
+a.hotel-search-button:hover {
     color: #ffffff;
     
     background-color: #604e43;
 }
 
-.hotel-search-button a:active {
+a.hotel-search-button:active {
     color: rgba(255, 255, 255, 0.3);
     
     background-color: #503e33;
@@ -390,6 +392,9 @@ body > .container {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    
+    box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.2);
 }
 
 
@@ -431,8 +436,8 @@ body > .container {
 }
 
 /* При переполнении по центру будет оставаться пустое место. */
-.main-navigation-list li:nth-child(4n+2) { 
-    margin-right: 240px;
+.main-navigation-list li:nth-child(4n+3) { 
+    margin-left: 240px;
 }
 
 .main-navigation-list li:nth-child(4n+1),
@@ -471,7 +476,7 @@ body > .container {
 
 .main-intro {
     padding-top: 62px;
-    padding-bottom: 56px;
+    padding-bottom: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -488,6 +493,8 @@ body > .container {
 }
 
 .features {
+    /* временно */
+    height: 1098px;
 }
 
 .hotel-search {
@@ -497,7 +504,7 @@ body > .container {
 }
 
 .hotel-search-intro {
-    padding-top: 57px;
+    padding-top: 37px;
 }
 
 .hotel-search-intro p {
@@ -509,17 +516,22 @@ body > .container {
     margin-bottom: 47px;   
 }
 
-.hotel-search-button {
-    align-self: center;
-    width: 568px;  
-}
-
 
 
 
 
 
 /* ФОРМА ПОИСКА ОТЕЛЕЙ */
+
+.hotel-search-wrapper {
+    display: flex;
+    background-color: #fff;
+    justify-content: center;
+}
+
+.hotel-search-main {
+    position: relative;
+}
 
 .hotel-search-form {
     align-self: center;
@@ -533,6 +545,11 @@ body > .container {
     
     align-items: flex-end;
     justify-content: flex-start;
+    
+    position: absolute;
+    top: 100%;
+    
+    box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
 }
 
 .hotel-search-form input {
@@ -593,6 +610,16 @@ body > .container {
 }
 
 
+.hotel-search-map {
+    height: 593px;
+    width: 1200px;
+    background-image: url(../img/index-map.jpg);
+}
+
+
+
+
+
 
 
 
@@ -605,13 +632,22 @@ body > .container {
     justify-content: space-evenly;
     min-height: 120px;
     background-color: rgba(255, 255, 255, 0.9);
+    width: 1200px;
 }
 
+.main-footer.index {
+    position: absolute;
+    bottom: 0px;   
+}
+
+/* Ну вроде справился без задания ширины колонкам. Если ширину не задавать, то можно запросто еще колонок добавлять, прикольно же. Проблема была в .footer-social ul, перенос не был включен. */
 .main-footer > :nth-child(n) {
     flex-basis: 0;
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    padding: 25px;
 }
 
 .footer-hashtag > :nth-child(n),
@@ -622,20 +658,17 @@ body > .container {
 
 .footer-social ul {
     display: flex;
-    align-items: center;   
-    justify-content: space-around;
+    align-items: flex-start;   
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 0px;
     margin: 0px;
 }
 
 .footer-social li {
-    margin: 0px;
+    margin: 3px;
     padding: 0px;
-}
-
-
-.footer-social li:not(:last-child) {
-    margin-right: 6px;
 }
 
 .footer-social a {
@@ -697,9 +730,6 @@ body > .container {
     padding-right: 72px;
     padding-bottom: 30px;
     
-    /* вместо этого будут разные верхние паддинги у дочерних */
-    padding-top: 0px; 
-    
     border-top: 1px rgb(229, 229, 229) solid;
 }
 
@@ -735,7 +765,7 @@ body > .container {
     max-width: 750px; 
 }
 
-.catalog-item-main > h3 {
+.catalog-item-main h3 {
     padding: 0px;
     margin: 0px;
     margin-bottom: 7px;
@@ -758,6 +788,7 @@ body > .container {
     box-sizing: border-box;
     padding: 3px 17px;
     min-width: 110px;
+    text-align: center;
 }
 
 /* тянется на всю высоту, т. к. с горизонтальным потоком */
@@ -789,6 +820,7 @@ body > .container {
     padding-bottom: 3px;
     padding-left: 15px;
     padding-right: 13px;
+    text-align: center;
     
     box-sizing: border-box;
     min-width: 110px;
