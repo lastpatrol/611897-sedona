@@ -476,7 +476,7 @@ body > .container {
 
 .main-intro {
     padding-top: 62px;
-    padding-bottom: 25px;
+    padding-bottom: 26px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -492,10 +492,119 @@ body > .container {
     width: 450px;
 }
 
+
+
 .features {
-    /* временно */
-    height: 1098px;
+    background-color: #fff;
+    
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
 }
+
+.features > :nth-child(n) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features h3 {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 21px;
+    width: 160px;
+    margin: 0px;
+    margin-bottom: 24px;
+}
+
+/* Тут не получилось подобрать универсальную ширину, чтобы текст везде переносился как на макете. Прибегнул к <br>. Считаю, оправданно, т. к. с точки зрения дизайна важен перенос в определенных местах. */
+.features p {
+    line-height: 21px;
+    margin: 0px;
+    margin-bottom: 20px;
+    width: 310px;
+}
+
+.feature-regular {
+    width: 400px;
+    min-height: 256px;
+    padding-top: 47px;
+    box-sizing: border-box;
+}
+
+.feature-regular.blue {
+    background-color: #81b3d2;
+    color: #fff;
+}
+
+.feature-regular.gray p,
+.feature-with-icon p {
+    color: #333333;
+}
+
+.feature-regular.gray {
+    background-color: #eeeeee;
+}
+
+.feature-with-icon {
+    background-color: #fff;
+    
+    width: 400px;
+    min-height: 330px;
+}
+
+.feature-with-icon h3 {
+    margin-top: 161px;   
+    position: relative;
+}
+
+.feature-with-icon h3::before {
+    content: "";
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -105px;
+    left: 50%;
+    margin-left: -40px;
+}
+
+.feature-with-icon.house h3::before {
+    background-image: url(../img/feature-icon-house.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.feature-with-icon.food h3::before {
+    background-image: url(../img/feature-icon-food.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.feature-with-icon.gift h3::before {
+    background-image: url(../img/feature-icon-gift.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.feature-double-picture {
+    background-color: rgb(169, 213, 125);
+    
+    width: 800px;
+    min-height: 256px;
+}
+
+/* Тут был выбор: (1) взять картинки без маски, тогда был бы люфт на переполнение по вертикали, (2) взять обрезанные картинки, они меньше по размеру. Остановился на (2). */
+.feature-double-picture.one {
+    background-image: url(../img/features-back-1.jpg);
+    background-repeat: no-repeat;
+}
+
+.feature-double-picture.two {
+    background-image: url(../img/features-back-2.jpg);
+    background-repeat: no-repeat;
+}
+
+
 
 .hotel-search {
     display: flex;
@@ -504,7 +613,7 @@ body > .container {
 }
 
 .hotel-search-intro {
-    padding-top: 37px;
+    padding-top: 36px;
 }
 
 .hotel-search-intro p {
