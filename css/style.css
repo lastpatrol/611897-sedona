@@ -225,7 +225,8 @@ color: #cacaca;
 
 .hotel-search-form input[type="text"]:focus {
     background-color: #ffffff;
-    outline: solid 2px #e5e5e5;
+    border: solid 2px #e5e5e5;
+    outline: none;
 }
 
 button.calendar,
@@ -469,6 +470,7 @@ body > .container {
     background-image: url(../img/polygon.svg), url(../img/index-back.jpg);
     background-repeat: no-repeat, no-repeat;
     background-position: center bottom, 0 -56px;
+    background-size: 1200px 57px, auto auto;
     padding-top: 76px; 
     padding-bottom: 71px;
     text-align: center;
@@ -663,6 +665,8 @@ body > .container {
 .hotel-search-form input {
     padding-top: 6px;
     padding-bottom: 6px;
+    height: 38px;
+    box-sizing: border-box;
 }
 
 
@@ -748,20 +752,12 @@ body > .container {
     bottom: 0px;   
 }
 
-/* Ну вроде справился без задания ширины колонкам. Если ширину не задавать, то можно запросто еще колонок добавлять, прикольно же. Проблема была в .footer-social ul, перенос не был включен. */
 .main-footer > :nth-child(n) {
-    flex-basis: 0;
-    flex-grow: 1;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     padding: 25px;
-}
-
-.footer-hashtag > :nth-child(n),
-.footer-social > :nth-child(n),
-.footer-copyright > :nth-child(n) {
-    max-width: 80%;   
+    width: 350px;
 }
 
 .footer-social ul {
