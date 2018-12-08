@@ -492,8 +492,7 @@ body > .container {
     width: 450px;
 }
 
-
-
+/* Думаю, не сделать ли преимущества списком... */
 .features {
     background-color: #fff;
     
@@ -819,6 +818,137 @@ body > .container {
 
 
 /* СЕТКИ - HOTELS-MAIN */
+
+
+.catalog-sort {
+    background-color: #fff;
+    width: 1200px;
+    box-sizing: border-box;
+    min-height: 86px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+    padding-left: 72px;
+    padding-right: 72px;
+    padding-top: 29px;
+    padding-bottom: 15px;
+    
+    
+    /*временно*/
+    border-top: 1px rgb(229, 229, 229) solid;
+}
+                    
+/* Число трех разрядов - без проблем. */
+.catalog-sort-found {
+    font-size: 21px;
+    font-weight: bold;
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+    min-width: 165px;
+    max-width: 250px;
+}
+
+
+.catalog-sort-how {
+    font-size: 12px;
+    line-height: 18px;
+    
+    display: flex;
+    
+    margin-top: 6px;
+    
+    max-width: 650px;
+}
+
+.catalog-sort-how > span {
+    max-width: 210px;   
+    margin-right: 40px;
+}
+
+
+.catalog-sort-method {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.catalog-sort-method li {
+    margin-right: 33px; 
+    margin-bottom: 10px;
+}
+
+.catalog-sort-method a {
+    color: rgba(0, 0, 0, 0.3);
+    border-bottom: dotted #81b3d2 1px;
+}
+
+.catalog-sort-method a:hover {
+    color: #81b3d2;
+    border-bottom: dotted #81b3d2 1px;
+}
+
+.catalog-sort-method a:active {
+    color: #000000;
+    border-bottom: none;
+}
+
+.catalog-sort-method-current a,
+.catalog-sort-method-current a:hover,
+.catalog-sort-method-current a:active {
+    color: #81b3d2;
+    border-bottom: none;
+}
+
+
+.catalog-sort-order {
+    max-width: 100px;
+    margin-left: auto;
+    
+    display: flex;
+    align-items: flex-start;
+}
+
+a.order {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    fill: #cacaca;
+    
+    margin-right: 1px;
+    margin-left: 11px;
+}
+
+a.order.ascending {
+    margin-top: 10px;
+}
+
+a.order.descending {
+    margin-top: 9px;
+}
+
+a.order:hover svg {
+    fill: #000;
+}
+
+a.order:active svg,
+a.order.current svg,
+a.order.current:hover svg,
+a.order.current:active svg {
+    fill: #81b3d2;
+}
+
+
+
+
+
+
+
 
 .catalog-results {
     width: 1200px;        
