@@ -816,6 +816,99 @@ body > .container {
 /* СЕТКИ - HOTELS-MAIN */
 
 
+
+
+/* Интересно, можно ли было сделать как-то проще чекбоксы. Сложность в том, что тут по стайлгайду должен быть другой цвет у заблокированного чекбокса. Идея была сделать псевдоэлементами с инлайнингом svg в css, но мне кажется, так точно не проще. */
+.catalog-filters {
+    min-height: 217px;
+    width: 1200px;
+    background-image: url(../img/hotels-back.jpg);
+    background-position: center -56px;
+    background-repeat: no-repeat;
+}
+
+.catalog-filters-form {
+    display: flex;   
+    
+    line-height: 21px;
+    color: #fff;
+    
+    padding-left: 72px;
+    padding-right: 72px;
+    padding-top: 27px;
+    padding-bottom: 25px;
+}
+
+.catalog-filters-form legend {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.catalog-filters-form fieldset {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    min-width: 185px;
+    margin-right: 70px;
+}
+
+.catalog-filters-form ul {
+    padding: 0px;
+    margin: 0px;
+    padding-top: 24px;
+    list-style: none;
+}
+
+.catalog-filters-form li:not(:last-child) {
+    margin-bottom: 16px;  
+}
+
+.catalog-filters-form li:first-child {
+    padding-top: ;  
+}
+
+input[type="checkbox"]:not(:checked) ~ .on {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .off {
+    display: none;
+}
+
+/* Ну тут я совсем не знаю, как обойтись двойной вложенностью... */
+input[type="checkbox"]:not(:disabled) ~ span svg {
+    fill: #fff;
+}
+
+input[type="checkbox"]:disabled ~ span svg {
+    fill: #6a6a6a;
+}
+
+.properties label {
+    display: flex;
+}
+
+span.on,
+span.off {
+ width: 27px;   
+}
+
+span.property {
+    margin-left: 12px;  
+    padding-top: 2px;
+    padding-left: 1px;
+}
+
+
+
+
+
+
 .catalog-sort {
     background-color: #fff;
     width: 1200px;
