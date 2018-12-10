@@ -825,6 +825,7 @@ body > .container {
     background-image: url(../img/hotels-back.jpg);
     background-position: center -56px;
     background-repeat: no-repeat;
+    background-color: rgb(110, 110, 110);
 }
 
 .catalog-filters-form {
