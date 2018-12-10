@@ -845,6 +845,7 @@ body > .container {
     font-size: 16px;
     padding: 0px;
     margin: 0px;
+    color: inherit;
 }
 
 .catalog-filters-form fieldset {
@@ -1043,7 +1044,9 @@ button.price-submit {
     font-size: 14px;
     
     height: 36px;
-    min-width: 137px;
+    
+    /* min-width почему-то не работает в IE, кнопка тянется на всю ширину. */
+    width: 137px;
     
     text-transform: inherit;
     font-family: inherit;
