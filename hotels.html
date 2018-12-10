@@ -30,7 +30,7 @@
                     <h2 class="visually-hidden">Фильтр гостиниц</h2>
                     
                     <form class="catalog-filters-form" action="https://echo.htmlacademy.ru" method="get">
-                        <fieldset>
+                        <fieldset class="properties">
                             <legend>Инфраструктура:</legend>
                             <ul class="properties">
                                 <li>
@@ -60,7 +60,7 @@
                             </ul>
                         </fieldset>
                     
-                        <fieldset>
+                        <fieldset class="properties">
                             <legend>Тип жилья:</legend>
                             <ul class="properties">
                                 <li>
@@ -88,6 +88,31 @@
                                     </label>
                                 </li>
                             </ul>
+                        </fieldset>
+                        
+                        <fieldset class="price">
+                            <legend>Стоимость в сутки (Р):</legend>
+                            <div class="price-inputs">
+                                <label>
+                                    <span>От</span>
+                                    <input type="text">
+                                </label>
+                                <label>
+                                    <span>До</span>
+                                    <input type="text">
+                                </label>
+                            </div>
+                            
+                            <div class="price-controls">
+                                <div class="scale">
+                                    <div class="selected-range"></div>
+                                </div>
+                                <div class="control control-min"></div>
+                                <div class="control control-max"></div>
+                            </div>
+                            
+                            <button class="price-submit">Показать</button>
+                            
                         </fieldset>
                     </form>                    
                     

@@ -818,7 +818,7 @@ body > .container {
 
 
 
-/* Интересно, можно ли было сделать как-то проще чекбоксы. Сложность в том, что тут по стайлгайду должен быть другой цвет у заблокированного чекбокса. Идея была сделать псевдоэлементами с инлайнингом svg в css, но мне кажется, так точно не проще. */
+/* Интересно, можно ли было сделать как-то проще чекбоксы. Сложность в том, что тут по стайлгайду должен быть другой цвет у заблокированного чекбокса. Идея была сделать псевдоэлементами с инлайнингом svg в css, но мне кажется, так точно не проще, если вообще возможно. */
 .catalog-filters {
     min-height: 217px;
     width: 1200px;
@@ -852,6 +852,10 @@ body > .container {
     margin: 0px;
     display: flex;
     flex-direction: column;
+    
+}
+
+fieldset.properties {
     max-width: 250px;
     min-width: 185px;
     margin-right: 70px;
@@ -889,6 +893,12 @@ input[type="checkbox"]:disabled ~ span svg {
     fill: #6a6a6a;
 }
 
+/* Дефолтные аутлайны для доступности. Или не надо? */
+input[type="checkbox"]:focus ~ span.on,
+input[type="checkbox"]:focus ~ span.off {
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
 .properties label {
     display: flex;
 }
@@ -903,6 +913,153 @@ span.property {
     padding-top: 2px;
     padding-left: 1px;
 }
+
+
+fieldset.price {
+    margin-left: auto;
+}
+
+.price legend {
+    margin-bottom: 11px;   
+}
+
+.price-inputs {
+    border: 2px #fff solid;
+    border-radius: 3px;
+    box-sizing: border-box;
+    height: 35px;
+    width: 318px;
+    
+    display: flex;
+    position: relative;
+}
+
+.price-inputs::before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 2px;
+    background-color: #fff;
+    top: 4px;
+    left: 157px;
+    
+}
+
+
+.price-inputs input {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 21px;
+    text-transform: inherit;
+    width: 55px;
+    margin-left: 3px;
+    
+    color: #fff;
+}
+
+.price-inputs label {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.price-inputs label:first-child {
+    margin-right: auto;
+    padding-left: 65px;
+}
+
+
+.price-inputs label:last-child {
+    padding-right: 27px;
+    padding-left: 54px;
+}
+
+
+.price-controls {
+    margin-top: 20px;
+    margin-bottom: 32px;
+    position: relative;
+    padding-left: 1px;
+}
+
+.scale {
+    width: 307px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-left: 10px;
+}
+
+.selected-range {
+    width: 248px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 1);
+}   
+
+.control {
+    position: absolute;   
+    width: 40px;
+    height: 40px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.control {
+    width: 4px;
+    height: 4px;
+    border: 8px solid white;
+    border-radius: 15px;
+    background-color: rgb(172, 172, 172);
+    box-shadow: 0px 2px rgba(255, 255, 255, 0.2);
+}
+
+.control:hover {
+    width: 5px;
+    height: 5px;
+    border: 9px solid white;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+
+
+.control-min {
+    top: -9px;
+    left: 1px;
+}
+
+.control-max {
+    top: -9px;
+    left: 253px;
+}
+
+button.price-submit {
+    margin-top: 20px;
+    font-size: 14px;
+    
+    height: 36px;
+    min-width: 137px;
+    
+    text-transform: inherit;
+    font-family: inherit;
+    line-height: 21px;
+    color: #fff;
+    background-color: transparent;
+    border: #fff solid 2px;
+    border-radius: 2px;
+    
+    margin-left: 85px;
+}
+
+button.price-submit:hover {
+    color: black;
+    background-color: white;
+}
+
 
 
 
@@ -922,10 +1079,6 @@ span.property {
     padding-right: 72px;
     padding-top: 29px;
     padding-bottom: 15px;
-    
-    
-    /*временно*/
-    border-top: 1px rgb(229, 229, 229) solid;
 }
                     
 /* Число трех разрядов - без проблем. */
