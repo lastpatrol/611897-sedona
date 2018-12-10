@@ -217,6 +217,7 @@ color: #cacaca;
 .hotel-search-form input[type="text"] {
     background-color: #f2f2f2;
     border: none;
+    border-radius: 0px;
 }
 
 .hotel-search-form input[type="text"]:hover {
@@ -878,26 +879,24 @@ fieldset.properties {
     padding-top: ;  
 }
 
-input[type="checkbox"]:not(:checked) ~ .on {
+.property-checkbox:not(:checked) ~ .on {
     display: none;
 }
 
-input[type="checkbox"]:checked ~ .off {
+.property-checkbox:checked ~ .off {
     display: none;
 }
 
-/* Ну тут я совсем не знаю, как обойтись двойной вложенностью... */
-input[type="checkbox"]:not(:disabled) ~ span svg {
+.property-checkbox:not(:disabled) ~ span svg {
     fill: #fff;
 }
 
-input[type="checkbox"]:disabled ~ span svg {
+.property-checkbox:disabled ~ span svg {
     fill: #6a6a6a;
 }
 
-/* Дефолтные аутлайны для доступности. Или не надо? */
-input[type="checkbox"]:focus ~ span.on,
-input[type="checkbox"]:focus ~ span.off {
+.property-checkbox:focus ~ span.on,
+.property-checkbox:focus ~ span.off {
     outline: 5px auto -webkit-focus-ring-color;
 }
 
@@ -919,6 +918,7 @@ span.property {
 
 fieldset.price {
     margin-left: auto;
+    align-items: flex-start;
 }
 
 .price legend {
@@ -1040,13 +1040,11 @@ fieldset.price {
 }
 
 button.price-submit {
-    margin-top: 20px;
     font-size: 14px;
     
     height: 36px;
     
-    /* min-width почему-то не работает в IE, кнопка тянется на всю ширину. */
-    width: 137px;
+    min-width: 137px;
     
     text-transform: inherit;
     font-family: inherit;
@@ -1057,6 +1055,7 @@ button.price-submit {
     border-radius: 2px;
     
     margin-left: 85px;
+    margin-right: auto;
 }
 
 button.price-submit:hover {
