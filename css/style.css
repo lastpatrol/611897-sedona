@@ -254,10 +254,12 @@ button.calendar {
     right: 0px;
 }
 
+.hotel-search-form svg {
+    margin: auto;
+}
+
 button.calendar svg {
     fill: #cacaca;
-    width: 21px;
-    height: 22px;
 }
 
 button.calendar:hover svg {
