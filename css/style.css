@@ -1,3 +1,11 @@
+/* TODO перед защитой 
+
+- Автопрефиксер: http://autoprefixer.github.io/ru/
+- Минимизация CSS: https://css.github.io/csso/csso.html
+
+*/
+
+
 /* GENERAL */
 
 body {
@@ -196,8 +204,7 @@ a.hotel-search-button:active {
 }
 
 .hotel-search-form,
-.hotel-search-form input,
-.hotel-search-form ::placeholder {
+.hotel-search-form input {
     font-size: 14px;
     line-height: 26px;
     color: #000000;
@@ -206,8 +213,40 @@ a.hotel-search-button:active {
     font-family: inherit;
 }
 
-.hotel-search-form ::placeholder {
-color: #cacaca;
+.hotel-search-form input:-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 26px;
+    color: #cacaca; 
+    font-weight: bold;
+    text-transform: inherit;
+    font-family: inherit;
+}
+
+.hotel-search-form input::-webkit-input-placeholder {
+     font-size: 14px;
+    line-height: 26px;
+    color: #cacaca;
+    font-weight: bold;
+    text-transform: inherit;
+    font-family: inherit;
+}
+
+.hotel-search-form input::-moz-placeholder {
+     font-size: 14px;
+    line-height: 26px;
+    color: #cacaca;
+    font-weight: bold;
+    text-transform: inherit;
+    font-family: inherit;
+}
+
+.hotel-search-form input::placeholder {
+     font-size: 14px;
+    line-height: 26px;
+    color: #cacaca;
+    font-weight: bold;
+    text-transform: inherit;
+    font-family: inherit;
 }
 
 .hotel-search-form {
@@ -242,6 +281,8 @@ button.calendar,
     align-items: center;
     
     padding: 0px;
+    
+    text-align: center;
 }
 
 .people-count button {
@@ -252,10 +293,6 @@ button.calendar {
     background-color: rgba(255, 255, 255, 0);
     position: absolute;
     right: 0px;
-}
-
-.hotel-search-form svg {
-    margin: auto;
 }
 
 button.calendar svg {
@@ -680,7 +717,7 @@ body > .container {
 
 .date-input {
     box-sizing: border-box;
-    flex-grow: 1;
+    width:  346px;
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
@@ -905,7 +942,7 @@ fieldset.properties {
 
 .property-checkbox:focus ~ span.on,
 .property-checkbox:focus ~ span.off {
-    outline: 5px auto -webkit-focus-ring-color;
+    outline: 5px auto -webkit-focus-ring-color; /* rgb(86, 144, 251) */
 }
 
 .properties label {
