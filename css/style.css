@@ -218,7 +218,6 @@ color: #cacaca;
     background-color: #f2f2f2;
     border: none;
     border-radius: 0px;
-    padding-right: 50px;
 }
 
 .hotel-search-form input[type="text"]:hover {
@@ -231,6 +230,7 @@ color: #cacaca;
     outline: none;
 }
 
+
 button.calendar,
 .people-count button {
     border: none;
@@ -240,6 +240,8 @@ button.calendar,
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    padding: 0px;
 }
 
 .people-count button {
@@ -685,6 +687,7 @@ body > .container {
 
 .date-input input { 
     padding-left: 12px;
+    padding-right: 50px;
     flex-grow: 1;
 }
 
