@@ -690,7 +690,8 @@ body > .container {
 .date-input input { 
     padding-left: 12px;
     padding-right: 50px;
-    flex-grow: 1;
+    width: 284px;
+    
 }
 
 .people-count {
