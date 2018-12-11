@@ -77,14 +77,17 @@ img {
     color: #81b3d2;
 }
 
-.main-navigation-list a:active {
+.main-navigation-list a:active,
+.main-navigation-list a:focus {
     color: rgba(0, 0, 0, 0.3);
+    outline: none;
 }
 
 .main-navigation-current a,
 .main-navigation-current a:hover,
 .main-navigation-current a:active {
     color: #766357; 
+    outline: none;
 }
 
 
@@ -111,8 +114,10 @@ a.footer-social-link:hover {
     background-color: #669ec0;
 }
 
-a.footer-social-link:active {
+a.footer-social-link:active,
+a.footer-social-link:focus {
     background-color: #5496bd;
+    outline: none;
 }
 
 a.footer-social-link svg {
@@ -123,7 +128,8 @@ a.footer-social-link:hover svg {
     fill: #ffffff;
 }
 
-a.footer-social-link:active svg {
+a.footer-social-link:active svg,
+a.footer-social-link:focus svg {
     fill: #8cb8d1;
 }
 
@@ -135,12 +141,15 @@ a.footer-copyright-logo:hover svg {
     fill: #81b3d2;
 }
 
-a.footer-copyright-logo:active svg {
+a.footer-copyright-logo:active svg,
+a.footer-copyright-logo:focus svg {
     fill: #cacaca;
 }
 
-
-
+a.footer-copyright-logo:focus,
+a.footer-copyright-logo:active {
+    outline: none;
+}
 
 
 
@@ -201,9 +210,10 @@ a.hotel-search-button:hover {
     background-color: #604e43;
 }
 
-a.hotel-search-button:active {
+a.hotel-search-button:active,
+a.hotel-search-button:focus {
     color: rgba(255, 255, 255, 0.3);
-    
+    outline: none;
     background-color: #503e33;
 }
 
@@ -353,9 +363,11 @@ button.children:active svg {
     background-color: #669ec0;
 }
 
-.hotel-search-form button[type="submit"]:active {
+.hotel-search-form button[type="submit"]:active,
+.hotel-search-form button[type="submit"]:focus {
     background-color: #5496bd;
     color: rgba(255, 255, 255, 0.3);
+    outline: none;
 }
 
 
@@ -382,8 +394,10 @@ h3 a:hover {
     color: #81b3d2;
 }
 
-h3 a:active {
+h3 a:active,
+h3 a:focus {
     color: rgba(0, 0, 0, 0.3);
+    outline: none;
 }
 
 .catalog-item-category,
@@ -405,9 +419,11 @@ a.button-more:hover {
     background-color: rgb(107, 160, 192);
 }
 
-a.button-more:active {
+a.button-more:active,
+a.button-more:focus {
     color: rgba(255, 255, 255, 0.3);
     background-color: rgb(89, 152, 189);
+    outline: none;
 }
 
 a.button-book {
@@ -418,9 +434,11 @@ a.button-book:hover {
     background-color: #604e43;
 }
 
-a.button-book:active {
+a.button-book:active,
+a.button-book:focus {
     color: rgba(255, 255, 255, 0.3);
     background-color: #503e33;
+    outline: none;
 }
 
 .catalog-item-rating {
@@ -1112,9 +1130,11 @@ button.price-submit {
     margin-right: auto;
 }
 
-button.price-submit:hover {
+button.price-submit:hover,
+button.price-submit:focus {
     color: black;
     background-color: white;
+    outline: none;
 }
 
 
@@ -1192,9 +1212,11 @@ button.price-submit:hover {
     border-bottom: dotted #81b3d2 1px;
 }
 
-.catalog-sort-method a:active {
+.catalog-sort-method a:active, 
+.catalog-sort-method a:focus {
     color: #000000;
     border-bottom: none;
+    outline: none;
 }
 
 .catalog-sort-method-current a,
@@ -1231,7 +1253,8 @@ a.order.descending {
     margin-top: 9px;
 }
 
-a.order:hover svg {
+a.order:hover svg,
+a.order:focus svg {
     fill: #000;
 }
 
@@ -1242,7 +1265,10 @@ a.order.current:active svg {
     fill: #81b3d2;
 }
 
-
+a.order:active,
+a.order:focus {
+    outline: none;   
+}
 
 
 
