@@ -1,12 +1,4 @@
-/* TODO перед защитой 
-
-- Автопрефиксер: http://autoprefixer.github.io/ru/
-- Минимизация CSS: https://css.github.io/csso/csso.html
-
-*/
-
-
-/* GENERAL */
+/* Дяденька, проверяйте строго. */
 
 body {
     padding: 0px;
@@ -46,7 +38,9 @@ input[type="radio"].visually-hidden {
 
   white-space: nowrap;
 
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -59,11 +53,6 @@ img {
 *:focus {
     outline: 2px dotted orange;
 }
-
-
-
-
-/* HEADER */
 
 .main-navigation {
     font-weight: bold;
@@ -89,13 +78,6 @@ img {
     color: #766357; 
     outline: none;
 }
-
-
-
-
-
-
-/* FOOTER */
 
 .footer-hashtag {
     font-size: 21px;
@@ -151,10 +133,6 @@ a.footer-copyright-logo:active {
     outline: none;
 }
 
-
-
-/* INDEX */
-
 .main-intro {
     color: #333333;
     
@@ -170,7 +148,6 @@ a.footer-copyright-logo:active {
     line-height: 21px;
 }
 
-
 .hotel-search-intro {
     color: #333333;
     line-height: 24px;
@@ -178,9 +155,18 @@ a.footer-copyright-logo:active {
     text-align: center;
     background-color: #ffffff;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .hotel-search-intro b {
@@ -189,11 +175,11 @@ a.footer-copyright-logo:active {
     line-height: 36px;
 }
 
-
 a.hotel-search-button {
     background-color: #766357;
     display: block;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 30px;
     width: 568px;
     
@@ -245,7 +231,7 @@ a.hotel-search-button:focus {
     font-family: inherit;
 }
 
-.hotel-search-form input::-moz-placeholder {
+.hotel-search-form input::-ms-input-placeholder {
      font-size: 14px;
     line-height: 26px;
     color: #cacaca;
@@ -291,11 +277,20 @@ button.calendar,
     height: 38px;
     padding: 0px;
     text-align: center;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
     
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 button.calendar:focus,
@@ -369,13 +364,6 @@ button.children:active svg {
     color: rgba(255, 255, 255, 0.3);
     outline: none;
 }
-
-
-
-
-
-
-/* HOTELS */
 
 .catalog-results {
     background-color: #ffffff;
@@ -454,26 +442,16 @@ a.button-book:focus {
     height: 17px;
 }
 
-
-
-
-
-
-/* СЕТКИ - GENERAL */
-
 body > .container {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
     
-    box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.2);
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.2);
+    
+            box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.2);
 }
-
-
-
-
-/* СЕТКИ - HEADER */
 
 .main-header {
 }
@@ -487,28 +465,38 @@ body > .container {
     height: 71px;
     position: absolute;
     left: 50%;
-    transform: translateX(-70px);
+    -webkit-transform: translateX(-70px);
+        -ms-transform: translateX(-70px);
+            transform: translateX(-70px);
 }
 
 .main-navigation-list {
     margin: 0px;
     padding: 0px;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     background-color: #ffffff;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .main-navigation-list li {
     margin: 0px;    
 
     padding: 15px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 240px;
 }
 
-/* При переполнении по центру будет оставаться пустое место. */
 .main-navigation-list li:nth-child(4n+3) { 
     margin-left: 240px;
 }
@@ -525,16 +513,14 @@ body > .container {
     text-align: right;
 }
 
-
-
-
-
-
-/* СЕТКИ - INDEX-MAIN */
-
 .main-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .welcome {
@@ -551,9 +537,16 @@ body > .container {
 .main-intro {
     padding-top: 62px;
     padding-bottom: 26px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .main-intro p {
@@ -566,19 +559,30 @@ body > .container {
     width: 450px;
 }
 
-/* Думаю, не сделать ли преимущества списком... */
 .features {
     background-color: #fff;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     text-align: center;
 }
 
 .features > :nth-child(n) {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .features h3 {
@@ -590,7 +594,6 @@ body > .container {
     margin-bottom: 24px;
 }
 
-/* Тут не получилось подобрать универсальную ширину, чтобы текст везде переносился как на макете. Прибегнул к <br>. Считаю, оправданно, т. к. с точки зрения дизайна важен перенос в определенных местах. */
 .features p {
     line-height: 21px;
     margin: 0px;
@@ -602,7 +605,8 @@ body > .container {
     width: 400px;
     min-height: 256px;
     padding-top: 47px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .feature-regular.blue {
@@ -666,7 +670,6 @@ body > .container {
     min-height: 256px;
 }
 
-/* Тут был выбор: (1) взять картинки без маски, тогда был бы люфт на переполнение по вертикали, (2) взять обрезанные картинки, они меньше по размеру. Остановился на (2). */
 .feature-double-picture.one {
     background-image: url(../img/features-back-1.jpg);
     background-repeat: no-repeat;
@@ -680,9 +683,16 @@ body > .container {
 
 
 .hotel-search {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
 }
 
 .hotel-search-intro {
@@ -698,17 +708,14 @@ body > .container {
     margin-bottom: 47px;   
 }
 
-
-
-
-
-
-/* ФОРМА ПОИСКА ОТЕЛЕЙ */
-
 .hotel-search-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: #fff;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .hotel-search-main {
@@ -716,37 +723,58 @@ body > .container {
 }
 
 .hotel-search-form {
-    align-self: center;
-    box-sizing: border-box;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 568px;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     padding: 55px;
     padding-top: 40px;
     
-    align-items: flex-end;
-    justify-content: flex-start;
+    -webkit-box-align: end;
+    
+        -ms-flex-align: end;
+    
+            align-items: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     
     position: absolute;
     top: 100%;
     
-    box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
+    -webkit-box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
+    
+            box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
 }
 
 .hotel-search-form input {
     padding-top: 6px;
     padding-bottom: 6px;
     height: 38px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 
 .date-input {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width:  346px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     margin-bottom: 15px;
     position: relative;
 }
@@ -754,14 +782,21 @@ body > .container {
 .date-input input { 
     padding-left: 12px;
     padding-right: 50px;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 
 .people-count {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 114px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;   
-    align-items: flex-start;
+    -webkit-box-align: start;   
+        -ms-flex-align: start;   
+            align-items: flex-start;
     margin-bottom: 15px;
 }
 
@@ -771,7 +806,8 @@ body > .container {
 }
 
 .hotel-search-form label {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 112px;
     padding-top: 6px;
     padding-bottom: 6px;
@@ -790,7 +826,9 @@ body > .container {
 .hotel-search-form button.submit {
     width:  300px;  
     padding: 16px;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin-top: 38px;
 }
 
@@ -801,20 +839,16 @@ body > .container {
     background-image: url(../img/index-map.jpg);
 }
 
-
-
-
-
-
-
-
-
-/* СЕТКИ - FOOTER */
-
 .main-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;   
-    justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;   
+    -webkit-box-pack: space-evenly;   
+        -ms-flex-pack: space-evenly;   
+            justify-content: space-evenly;
     min-height: 120px;
     background-color: rgba(255, 255, 255, 0.9);
     width: 1200px;
@@ -826,19 +860,32 @@ body > .container {
 }
 
 .main-footer > :nth-child(n) {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     padding: 25px;
     width: 350px;
 }
 
 .footer-social ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;   
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;   
+    -ms-flex-line-pack: center;   
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     padding: 0px;
     margin: 0px;
 }
@@ -849,25 +896,44 @@ body > .container {
 }
 
 .footer-social a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 46px;
     height: 48px;
     margin: 0px;
 }
 
 .footer-copyright {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center; 
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; 
 }
 
 .footer-copyright > p {
-    flex-basis: 0;
-    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 0px;
     padding: 0px;
 }
@@ -881,17 +947,6 @@ body > .container {
     margin: 8px;
 }
 
-
-
-
-
-
-/* СЕТКИ - HOTELS-MAIN */
-
-
-
-
-/* Интересно, можно ли было сделать как-то проще чекбоксы. Сложность в том, что тут по стайлгайду должен быть другой цвет у заблокированного чекбокса. Идея была сделать псевдоэлементами с инлайнингом svg в css, но мне кажется, так точно не проще, если вообще возможно. */
 .catalog-filters {
     min-height: 217px;
     width: 1200px;
@@ -902,6 +957,8 @@ body > .container {
 }
 
 .catalog-filters-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;   
     
     line-height: 21px;
@@ -925,8 +982,13 @@ body > .container {
     border: none;
     padding: 0px;
     margin: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     
 }
 
@@ -969,10 +1031,12 @@ fieldset.properties {
 
 .property-checkbox:focus ~ span.on,
 .property-checkbox:focus ~ span.off {
-    outline: 2px dotted orange; /* rgb(86, 144, 251) */
+    outline: 2px dotted orange;
 }
 
 .properties label {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -990,7 +1054,9 @@ span.property {
 
 fieldset.price {
     margin-left: auto;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
 }
 
 .price legend {
@@ -1000,9 +1066,14 @@ fieldset.price {
 .price-inputs {
     border: 2px #fff solid;
     border-radius: 3px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     height: 35px;
     width: 318px;
+    
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
     
     display: flex;
     position: relative;
@@ -1034,10 +1105,15 @@ fieldset.price {
 }
 
 .price-inputs label {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 50%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .price-inputs label:first-child {
@@ -1077,9 +1153,17 @@ fieldset.price {
     width: 40px;
     height: 40px;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     cursor: pointer;
 }
 
@@ -1089,7 +1173,8 @@ fieldset.price {
     border: 8px solid white;
     border-radius: 15px;
     background-color: rgb(172, 172, 172);
-    box-shadow: 0px 2px rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: 0px 2px rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 2px rgba(255, 255, 255, 0.2);
 }
 
 .control:hover {
@@ -1146,11 +1231,17 @@ button.price-submit:focus {
 .catalog-sort {
     background-color: #fff;
     width: 1200px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     min-height: 86px;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     
     padding-left: 72px;
     padding-right: 72px;
@@ -1158,13 +1249,17 @@ button.price-submit:focus {
     padding-bottom: 15px;
 }
                     
-/* Число трех разрядов - без проблем. */
 .catalog-sort-found {
     font-size: 21px;
     font-weight: bold;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     
     min-width: 165px;
     max-width: 250px;
@@ -1174,6 +1269,10 @@ button.price-submit:focus {
 .catalog-sort-how {
     font-size: 12px;
     line-height: 18px;
+    
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
     
     display: flex;
     
@@ -1193,8 +1292,13 @@ button.price-submit:focus {
     margin: 0px;
     padding: 0px;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .catalog-sort-method li {
@@ -1231,14 +1335,26 @@ button.price-submit:focus {
     max-width: 100px;
     margin-left: auto;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
 }
 
 a.order {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; 
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center; 
+        -ms-flex-pack: center; 
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     fill: #cacaca;
     
     margin-right: 1px;
@@ -1282,11 +1398,18 @@ a.order:focus {
 .catalog-results ul {
     margin: 0px;
     padding: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .catalog-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     
     margin: 0px;
@@ -1311,6 +1434,8 @@ a.order:focus {
     
     margin-right: 30px;   
     margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -1321,11 +1446,15 @@ a.order:focus {
 .catalog-item-main {
     margin-right: auto;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     padding-top: 25px;
     
-    /* чтобы не наезжал на блок рейтинга */
     max-width: 750px; 
 }
 
@@ -1333,14 +1462,17 @@ a.order:focus {
     padding: 0px;
     margin: 0px;
     margin-bottom: 7px;
-    
-    /* h3 тянется на всю длину, а соседние блоки перенесутся вниз */
     width: 100%; 
 }
 
 .catalog-item-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin-right: 5px;
 }
 
@@ -1349,17 +1481,24 @@ a.order:focus {
 }
 
 .catalog-item-details .button {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 3px 17px;
     min-width: 110px;
     text-align: center;
 }
 
-/* тянется на всю высоту, т. к. с горизонтальным потоком */
 .catalog-item-value { 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     padding-top: 30px;
     margin-left: 50px;
     max-width: 330px;
@@ -1368,6 +1507,10 @@ a.order:focus {
 .catalog-item-stars {
     margin: 0px;
     margin-bottom: 20px;
+    
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
     
     display: flex;
     
@@ -1386,8 +1529,8 @@ a.order:focus {
     padding-right: 13px;
     text-align: center;
     
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    
+            box-sizing: border-box;
     min-width: 110px;
 }
-
-
