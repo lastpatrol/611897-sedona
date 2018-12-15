@@ -93,7 +93,7 @@
                             <form class="hotel-search-form" action="https://echo.htmlacademy.ru" method="get">
                                 <label for="arrival">Дата заезда:</label>
                                 <div class="date-input">
-                                    <input type="text" name="arrival" id="arrival" placeholder="24 апреля 2017" value="24 апреля 2017">
+                                    <input type="text" name="arrival" id="arrival" placeholder="24 апреля 2017">
                                     <button type="button" class="calendar arrival-calendar">
                                     <span class="visually-hidden">выбор даты заезда</span>
                                     <svg width="21" height="22"><path d="M19.251 2.025h-2.845V.648c0-.381-.294-.689-.656-.689-.363 0-.656.308-.656.689v1.377h-3.938V.648c0-.381-.294-.689-.655-.689-.363 0-.657.308-.657.689v1.377H5.906V.648c0-.381-.294-.689-.656-.689-.363 0-.657.308-.657.689v1.377H1.75C.784 2.025 0 2.847 0 3.862v16.302C0 21.179.784 22 1.75 22h17.501c.966 0 1.749-.821 1.749-1.836V3.862c0-1.015-.783-1.837-1.749-1.837zm.437 18.139a.448.448 0 0 1-.437.459H1.75a.45.45 0 0 1-.438-.459V3.862a.45.45 0 0 1 .438-.459h2.844v1.378c0 .381.294.689.657.689.362 0 .656-.308.656-.689V3.403h3.938v1.378c0 .381.294.689.657.689.361 0 .655-.308.655-.689V3.403h3.938v1.378c0 .381.293.689.656.689.362 0 .656-.308.656-.689V3.403h2.845c.241 0 .437.206.437.459v16.302z"/><path d="M4.594 8.225h2.625v2.066H4.594zm0 3.443h2.625v2.067H4.594zm0 3.444h2.625v2.066H4.594zm4.594 0h2.625v2.066H9.188zm0-3.444h2.625v2.067H9.188zm0-3.443h2.625v2.066H9.188zm4.593 6.887h2.625v2.066h-2.625zm0-3.444h2.625v2.067h-2.625zm0-3.443h2.625v2.066h-2.625z"/></svg>
@@ -104,7 +104,7 @@
 
                                 <label for="departure">Дата выезда:</label>
                                 <div class="date-input">
-                                    <input type="text" name="departure" id="departure" placeholder="4 июля 2017" value="4 июля 2017">
+                                    <input type="text" name="departure" id="departure" placeholder="4 июля 2017">
                                     <button type="button" class="calendar departure-calendar">
                                         <span class="visually-hidden">выбор даты выезда</span>
                                         <svg width="21" height="22"><path d="M19.251 2.025h-2.845V.648c0-.381-.294-.689-.656-.689-.363 0-.656.308-.656.689v1.377h-3.938V.648c0-.381-.294-.689-.655-.689-.363 0-.657.308-.657.689v1.377H5.906V.648c0-.381-.294-.689-.656-.689-.363 0-.657.308-.657.689v1.377H1.75C.784 2.025 0 2.847 0 3.862v16.302C0 21.179.784 22 1.75 22h17.501c.966 0 1.749-.821 1.749-1.836V3.862c0-1.015-.783-1.837-1.749-1.837zm.437 18.139a.448.448 0 0 1-.437.459H1.75a.45.45 0 0 1-.438-.459V3.862a.45.45 0 0 1 .438-.459h2.844v1.378c0 .381.294.689.657.689.362 0 .656-.308.656-.689V3.403h3.938v1.378c0 .381.294.689.657.689.361 0 .655-.308.655-.689V3.403h3.938v1.378c0 .381.293.689.656.689.362 0 .656-.308.656-.689V3.403h2.845c.241 0 .437.206.437.459v16.302z"/><path d="M4.594 8.225h2.625v2.066H4.594zm0 3.443h2.625v2.067H4.594zm0 3.444h2.625v2.066H4.594zm4.594 0h2.625v2.066H9.188zm0-3.444h2.625v2.067H9.188zm0-3.443h2.625v2.066H9.188zm4.593 6.887h2.625v2.066h-2.625zm0-3.444h2.625v2.067h-2.625zm0-3.443h2.625v2.066h-2.625z"/></svg>
@@ -192,7 +192,77 @@
         <script>
             var link = document.querySelector(".hotel-search-button");
             var form = document.querySelector(".hotel-search-form");
-            var arrival = document.querySelector("#arrival");
+
+            
+//====================================
+// дата приезда и отъезда по умолчанию
+//====================================  
+
+            
+            var arrivalElement = form.querySelector("#arrival");
+            var departureElement = form.querySelector("#departure");
+            
+            var currentDate = new Date();
+            var currentUnixTime = currentDate.getTime();
+            
+            var arrivalUnixTime = currentUnixTime + 1000 * 3600 * 24;
+            var departureUnixTime = currentUnixTime + 1000 * 3600 * 24 * 8;
+            
+            var arrivalDate = new Date(arrivalUnixTime);
+            var departureDate = new Date(departureUnixTime);
+            
+            var arrivalValue;
+            var departureValue;
+            
+            function getDateValue(inputDate) {
+                var day = inputDate.getDate();
+                var month = inputDate.getMonth();
+                var year = inputDate.getFullYear();
+                var outputMonth;
+                
+                    if (month == 0) {
+                          outputMonth = "января"; 
+                    } else if (month == 1) {
+                          outputMonth = "февраля";
+                    } else if (month == 2) {
+                          outputMonth = "марта";
+                    } else if (month == 3) {
+                          outputMonth = "апреля";
+                    } else if (month == 4) {
+                          outputMonth = "мая";
+                    } else if (month == 5) {
+                          outputMonth = "июня";
+                    } else if (month == 6) {
+                          outputMonth = "июля";
+                    } else if (month == 7) {
+                          outputMonth = "августа";
+                    } else if (month == 8) {
+                          outputMonth = "сетября";
+                    } else if (month == 9) {
+                          outputMonth = "октября";
+                    } else if (month == 10) {
+                          outputMonth = "ноября";
+                    } else if (month == 11) {
+                          outputMonth = "декабря";
+                    } 
+                
+                return(day + " " + outputMonth + " " + year);    
+            }
+            
+            arrivalValue = getDateValue(arrivalDate);
+            departureValue = getDateValue(departureDate);
+            
+            console.log("приезд: " + arrivalValue);
+            console.log("отъезд: " + departureValue);
+            
+            arrivalElement.value = arrivalValue;
+            departureElement.value = departureValue;          
+            
+            
+//==========================
+// открытие / закрытие формы
+//==========================
+            
             
             form.classList.add("form-closed"); // по умолчанию форма спрятана наверх
             
@@ -204,14 +274,19 @@
                     form.classList.remove("form-animation-close");
                     form.classList.add("form-animation-open");
                     form.classList.remove("form-closed");
-                    arrival.focus();
+                    arrivalElement.focus();
+                    arrivalElement.select();
                 } else {
                     form.classList.remove("form-animation-open");
                     form.classList.add("form-animation-close");
                     form.classList.add("form-closed");
                 }
             });
-            console.log(arrival.value);
+            
+
+
+            
+            
             
         </script>
     </body>

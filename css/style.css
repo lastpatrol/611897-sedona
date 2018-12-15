@@ -1567,14 +1567,24 @@ a.order:focus {
 /* ПОЗИЦИОНИРОВАНИЕ ДЛЯ ПРЯТОК ФОРМЫ */
 
 .features,
-.hotel-search-intro,
-.hotel-search-wrapper,
-.hotel-search-main,
-.hotel-search-button {
-	position: relative;
-	z-index: 100;
+.hotel-search-intro {
+    position: relative;
+    z-index: 5;
 }
 
-.hotel-search-form {
-    z-index: 50;
+.hotel-search-wrapper {
+    position: relative;
+    z-index: 0;
 }
+
+.hotel-search-main {
+    position: relative;
+    z-index: 0;
+}
+    .hotel-search-button {  
+        position: relative;
+        z-index: -1;
+    }
+    .hotel-search-form {
+        z-index: -2;
+    }
