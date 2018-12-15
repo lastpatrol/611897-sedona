@@ -1541,45 +1541,32 @@ a.order:focus {
 
 
 .form-closed {
-    -webkit-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-            transform: translateY(-100%);
+    pointer-events: none;
+    opacity: 0;
 }
 
 .form-animation-open {
-    -webkit-animation-name: form-open;
             animation-name: form-open;
-    -webkit-animation-duration: 0.7s;
             animation-duration: 0.7s;
 }
-@-webkit-keyframes form-open {
-  from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
-  100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
-}
 @keyframes form-open {
-  from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
-  100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
+  from { transform: translateY(-100%); }
+  100% { transform: translateY(0px); }
 }
 
 .form-animation-close {
-    -webkit-animation-name: form-close;
             animation-name: form-close;
-    -webkit-animation-duration: 0.7s;
             animation-duration: 0.7s;
 }
-@-webkit-keyframes form-close {
-  from { -webkit-transform: translateY(0px); transform: translateY(0px); }
-  100% { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
-}
 @keyframes form-close {
-  from { -webkit-transform: translateY(0px); transform: translateY(0px); }
-  100% { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+  from { transform: translateY(0px); opacity: 1; }
+  100% { transform: translateY(-100%); opacity: 1; }
+  
 }
 
+
 .form-animation-error {
-    -webkit-animation-name: form-error;
             animation-name: form-error;
-    -webkit-animation-duration: 0.3s;
             animation-duration: 0.3s;
 }
 @-webkit-keyframes form-error {
