@@ -1601,18 +1601,6 @@ a.order:focus {
     z-index: 0;
 }
 
-/*
-.hotel-search-main {
-    position: relative;
-    z-index: 0;
+.hotel-search-form {
+    z-index: -2;
 }
-*/
-/*
-    .hotel-search-button {  
-        position: relative;
-        z-index: 0;
-    }
-*/
-    .hotel-search-form {
-        z-index: -2;
-    }
