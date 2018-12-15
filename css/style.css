@@ -1537,34 +1537,47 @@ a.order:focus {
 }
 
 
-/* АНИМАЦИЯ ФОРМЫ */
+
+
 
 .form-closed {
     transform: translateY(-100%);
-}
-
-@keyframes form-open {
-  from { transform: translateY(-100%); }
-  100% { transform: translateY(0px); }
-}
-
-@keyframes form-close {
-  from { transform: translateY(0px); }
-  100% { transform: translateY(-100%); }
 }
 
 .form-animation-open {
     animation-name: form-open;
     animation-duration: 0.7s;
 }
+@keyframes form-open {
+  from { transform: translateY(-100%); }
+  100% { transform: translateY(0px); }
+}
 
 .form-animation-close {
     animation-name: form-close;
     animation-duration: 0.7s;
 }
+@keyframes form-close {
+  from { transform: translateY(0px); }
+  100% { transform: translateY(-100%); }
+}
+
+.form-animation-error {
+    animation-name: form-error;
+    animation-duration: 0.3s;
+}
+@keyframes form-error {
+    from { transform: translateX(20px); }
+    20% { transform: translateX(-15px); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(2px); }
+    100% { transform: translateX(0px); }
+}
 
 
-/* ПОЗИЦИОНИРОВАНИЕ ДЛЯ ПРЯТОК ФОРМЫ */
+
+
 
 .features,
 .hotel-search-intro {
