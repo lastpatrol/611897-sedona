@@ -280,45 +280,14 @@ button.calendar,
     text-align: center;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    
-    display: -webkit-box;
-    
-    display: -ms-flexbox;
-    
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    
-    position: relative;
+
 }
 
-/*
-button.plus svg {
-    position: absolute;
-    top: 13px;
-    left: 13px;
-}
-*/
-
-/*
-button.minus svg {
-    position: absolute;
-    top: 13px;
-    left: 13px;
-}
-*/
-
-/*
+button.plus svg,
+button.minus svg,
 button.calendar svg {
-    position: absolute;
-    top: 7px;
-    left: 7px;
+    margin: auto;
 }
-*/
 
 button.calendar:focus,
 .people-count button:focus {
