@@ -533,7 +533,7 @@ body > .container {
     background-image: url(../img/polygon.svg), url(../img/index-back.jpg);
     background-repeat: no-repeat, no-repeat;
     background-position: center bottom, 0 -56px;
-    background-size: 1200px 57px, auto auto;
+    background-size: 1200px auto, auto auto;
     padding-top: 76px; 
     padding-bottom: 71px;
     text-align: center;
