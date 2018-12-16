@@ -75,7 +75,7 @@
             
             
             
-            form.classList.add("form-closed"); // по умолчанию форма спрятана наверх
+            form.classList.add("form-closed"); // по умолчанию форма спрятана
             
             var isStorageSupport = true;
             var adults;
@@ -95,10 +95,10 @@
 
                 
                 // Фокус и выделение
-//                function focusAndSelect(element) {
-//                    element.focus();
-//                    element.setSelectionRange(0, 999);
-//                }
+                function focusAndSelect(element) {
+                    element.focus();
+                    element.select();
+                }
 
                 //клик по кнопке открытия формы
                 link.addEventListener("click", function (evt) {
@@ -129,9 +129,7 @@
                         childrenElement.value = children;
                     }
                     
-//                    setTimeout(focusAndSelect, 700, arrivalElement);
-                    arrivalElement.focus();
-                    arrivalElement.setSelectionRange(0, 999);
+                    setTimeout(focusAndSelect, 700, arrivalElement);
                     
                 } else {
                     form.classList.remove("form-animation-open");
