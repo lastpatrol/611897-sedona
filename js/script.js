@@ -93,12 +93,23 @@
                 isStorageSupport = false;
               }
 
-            link.addEventListener("click", function (evt) {
+                
+                // Фокус и выделение
+                function focusAndSelect(element) {
+                    element.focus();
+                    element.select();
+                }
+
+                //клик по кнопке открытия формы
+                link.addEventListener("click", function (evt) {
 	           
                 evt.preventDefault();
                 
                 if (form.classList.contains("form-closed")) {
+                    form.classList.remove("form-animation-close");
+                    form.classList.add("form-animation-open");
                     form.classList.remove("form-closed");
+                    
                     arrivalElement.removeAttribute("disabled");
                     departureElement.removeAttribute("disabled");
                     adultsElement.removeAttribute("disabled");
@@ -111,8 +122,7 @@
                     childrenPlus.removeAttribute("disabled");
                     hotelSearchSubmit.removeAttribute("disabled");
                     
-                    arrivalElement.focus();
-                    arrivalElement.select();
+                    setTimeout(focusAndSelect, 700, arrivalElement);
                     
                     if (adults) {
                         adultsElement.value = adults;
@@ -122,7 +132,10 @@
                     }
                     
                 } else {
+                    form.classList.remove("form-animation-open");
+                    form.classList.add("form-animation-close");
                     form.classList.add("form-closed");
+                    
                     arrivalElement.setAttribute("disabled", "disabled");
                     departureElement.setAttribute("disabled", "disabled");
                     adultsElement.setAttribute("disabled", "disabled");

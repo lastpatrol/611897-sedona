@@ -1542,15 +1542,30 @@ a.order:focus {
 }
 
 
-.hotel-search-form {
-    opacity: 1;
-    transition: opacity 1s ease;
+.form-closed {
+    pointer-events: none;
+    opacity: 0;
 }
 
-.form-closed {
-    opacity: 0;
-    pointer-events: none;
+.form-animation-open {
+            animation-name: form-open;
+            animation-duration: 0.5s;
 }
+@keyframes form-open {
+  from { transform: translateY(-100%); }
+  100% { transform: translateY(0px); }
+}
+
+.form-animation-close {
+            animation-name: form-close;
+            animation-duration: 0.5s;
+}
+@keyframes form-close {
+  from { transform: translateY(0px); opacity: 1; }
+  100% { transform: translateY(-100%); opacity: 1; }
+  
+}
+
 
 .form-animation-error {
             animation-name: form-error;
@@ -1571,4 +1586,23 @@ a.order:focus {
     60% { -webkit-transform: translateX(-5px); transform: translateX(-5px); }
     80% { -webkit-transform: translateX(2px); transform: translateX(2px); }
     100% { -webkit-transform: translateX(0px); transform: translateX(0px); }
+}
+
+
+
+
+
+.features,
+.hotel-search-intro {
+    position: relative;
+    z-index: 5;
+}
+
+.hotel-search-wrapper {
+    position: relative;
+    z-index: 0;
+}
+
+.hotel-search-form {
+    z-index: -2;
 }
