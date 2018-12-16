@@ -343,6 +343,10 @@ button.children:active svg {
     fill: rgb(134, 181, 210);
 }
 
+.svg-wrapper {
+    margin: auto;   
+}
+
 .hotel-search-form button[type="submit"] {
     background-color: #81b3d2;
     border: none;
