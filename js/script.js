@@ -95,10 +95,10 @@
 
                 
                 // Фокус и выделение
-                function focusAndSelect(element) {
-                    element.focus();
-                    element.setSelectionRange(0, 999);
-                }
+//                function focusAndSelect(element) {
+//                    element.focus();
+//                    element.setSelectionRange(0, 999);
+//                }
 
                 //клик по кнопке открытия формы
                 link.addEventListener("click", function (evt) {
@@ -129,7 +129,9 @@
                         childrenElement.value = children;
                     }
                     
-                    setTimeout(focusAndSelect, 700, arrivalElement);
+//                    setTimeout(focusAndSelect, 700, arrivalElement);
+                    arrivalElement.focus();
+                    arrivalElement.setSelectionRange(0, 999);
                     
                 } else {
                     form.classList.remove("form-animation-open");
