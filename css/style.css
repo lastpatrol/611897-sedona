@@ -257,6 +257,7 @@ a.hotel-search-button:focus {
     background-color: #f2f2f2;
     border: solid 2px transparent;
     border-radius: 0px;
+    -webkit-appearance: none;
 }
 
 .hotel-search-form input[type="text"]:hover {
