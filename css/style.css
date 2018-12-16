@@ -50,7 +50,9 @@ img {
     height: auto;
 }
 
-*:focus {
+a:focus,
+button:focus,
+input:focus {
     outline: 2px dotted orange;
 }
 
@@ -341,10 +343,6 @@ button.children:hover svg {
 button.adults:active svg,
 button.children:active svg {
     fill: rgb(134, 181, 210);
-}
-
-.svg-wrapper {
-    margin: auto;   
 }
 
 .hotel-search-form button[type="submit"] {
