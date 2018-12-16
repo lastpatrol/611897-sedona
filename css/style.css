@@ -1537,15 +1537,33 @@ a.order:focus {
 }
 
 
-.hotel-search-form {
-    opacity: 1;
-    transition: opacity 1s ease;
-}
+
+
 
 .form-closed {
-    opacity: 0;
-    pointer-events: none;
+    
+    transform: translateX(-2000px);
 }
+
+.form-animation-open {
+            animation-name: form-open;
+            animation-duration: 0.7s;
+}
+@keyframes form-open {
+  from { transform: translateX(-2000px); }
+  100% { transform: translateX(0px); }
+}
+
+.form-animation-close {
+            animation-name: form-close;
+            animation-duration: 0.7s;
+}
+@keyframes form-close {
+  from { transform: translateX(0px); }
+  100% { transform: translateX(-2000px); }
+  
+}
+
 
 .form-animation-error {
             animation-name: form-error;

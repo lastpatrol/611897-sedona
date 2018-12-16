@@ -98,7 +98,10 @@
                 evt.preventDefault();
                 
                 if (form.classList.contains("form-closed")) {
+                    form.classList.remove("form-animation-close");
+                    form.classList.add("form-animation-open");
                     form.classList.remove("form-closed");
+                    
                     arrivalElement.removeAttribute("disabled");
                     departureElement.removeAttribute("disabled");
                     adultsElement.removeAttribute("disabled");
@@ -122,6 +125,8 @@
                     }
                     
                 } else {
+                    form.classList.remove("form-animation-open");
+                    form.classList.add("form-animation-close");
                     form.classList.add("form-closed");
                     arrivalElement.setAttribute("disabled", "disabled");
                     departureElement.setAttribute("disabled", "disabled");
