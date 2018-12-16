@@ -72,19 +72,10 @@
             departureElement.value = departureValue;          
             
             
-            // по умолчанию форма спрятана
-            form.classList.add("form-closed"); 
-            arrivalElement.setAttribute("disabled", "disabled");
-            departureElement.setAttribute("disabled", "disabled");
-            adultsElement.setAttribute("disabled", "disabled");
-            childrenElement.setAttribute("disabled", "disabled");
-            arrivalCalendar.setAttribute("disabled", "disabled");
-            departureCalendar.setAttribute("disabled", "disabled");
-            adultsMinus.setAttribute("disabled", "disabled");
-            adultsPlus.setAttribute("disabled", "disabled");
-            childrenMinus.setAttribute("disabled", "disabled");
-            childrenPlus.setAttribute("disabled", "disabled");
-            hotelSearchSubmit.setAttribute("disabled", "disabled");
+            
+            
+            
+            form.classList.add("form-closed"); // по умолчанию форма спрятана
             
             var isStorageSupport = true;
             var adults;
