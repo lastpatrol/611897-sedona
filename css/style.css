@@ -292,7 +292,33 @@ button.calendar,
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    
+    position: relative;
 }
+
+/*
+button.plus svg {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+}
+*/
+
+/*
+button.minus svg {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+}
+*/
+
+/*
+button.calendar svg {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+*/
 
 button.calendar:focus,
 .people-count button:focus {
@@ -341,10 +367,6 @@ button.children:hover svg {
 button.adults:active svg,
 button.children:active svg {
     fill: rgb(134, 181, 210);
-}
-
-.svg-wrapper {
-    margin: auto;   
 }
 
 .hotel-search-form button[type="submit"] {
@@ -534,8 +556,8 @@ body > .container {
     background-repeat: no-repeat, no-repeat;
     background-position: center bottom, 0 -56px;
     background-size: 1200px auto, auto auto;
-    padding-top: 76px; 
-    padding-bottom: 71px;
+    padding-top: 62px; 
+    padding-bottom: 57px;
     text-align: center;
 }
 
@@ -1548,28 +1570,43 @@ a.order:focus {
 }
 
 .form-animation-open {
-            animation-name: form-open;
-            animation-duration: 0.5s;
+            -webkit-animation-name: form-open;
+                    animation-name: form-open;
+            -webkit-animation-duration: 0.5s;
+                    animation-duration: 0.5s;
+}
+@-webkit-keyframes form-open {
+  from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+  100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
 }
 @keyframes form-open {
-  from { transform: translateY(-100%); }
-  100% { transform: translateY(0px); }
+  from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+  100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
 }
 
 .form-animation-close {
-            animation-name: form-close;
-            animation-duration: 0.5s;
+            -webkit-animation-name: form-close;
+                    animation-name: form-close;
+            -webkit-animation-duration: 0.5s;
+                    animation-duration: 0.5s;
+}
+@-webkit-keyframes form-close {
+  from { -webkit-transform: translateY(0px); transform: translateY(0px); opacity: 1; }
+  100% { -webkit-transform: translateY(-100%); transform: translateY(-100%); opacity: 1; }
+  
 }
 @keyframes form-close {
-  from { transform: translateY(0px); opacity: 1; }
-  100% { transform: translateY(-100%); opacity: 1; }
+  from { -webkit-transform: translateY(0px); transform: translateY(0px); opacity: 1; }
+  100% { -webkit-transform: translateY(-100%); transform: translateY(-100%); opacity: 1; }
   
 }
 
 
 .form-animation-error {
-            animation-name: form-error;
-            animation-duration: 0.3s;
+            -webkit-animation-name: form-error;
+                    animation-name: form-error;
+            -webkit-animation-duration: 0.3s;
+                    animation-duration: 0.3s;
 }
 @-webkit-keyframes form-error {
     from { -webkit-transform: translateX(20px); transform: translateX(20px); }
