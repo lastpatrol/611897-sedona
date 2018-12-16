@@ -97,7 +97,7 @@
                 // Фокус и выделение
                 function focusAndSelect(element) {
                     element.focus();
-                    element.select();
+                    element.setSelectionRange(0, 999);
                 }
 
                 //клик по кнопке открытия формы
@@ -106,10 +106,6 @@
                 evt.preventDefault();
                 
                 if (form.classList.contains("form-closed")) {
-                    form.classList.remove("form-animation-close");
-                    form.classList.add("form-animation-open");
-                    form.classList.remove("form-closed");
-                    
                     arrivalElement.removeAttribute("disabled");
                     departureElement.removeAttribute("disabled");
                     adultsElement.removeAttribute("disabled");
@@ -122,7 +118,9 @@
                     childrenPlus.removeAttribute("disabled");
                     hotelSearchSubmit.removeAttribute("disabled");
                     
-                    setTimeout(focusAndSelect, 700, arrivalElement);
+                    form.classList.remove("form-animation-close");
+                    form.classList.add("form-animation-open");
+                    form.classList.remove("form-closed");
                     
                     if (adults) {
                         adultsElement.value = adults;
@@ -130,6 +128,8 @@
                     if (children) {
                         childrenElement.value = children;
                     }
+                    
+                    setTimeout(focusAndSelect, 700, arrivalElement);
                     
                 } else {
                     form.classList.remove("form-animation-open");
