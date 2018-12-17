@@ -532,8 +532,8 @@ body > .container {
     background-repeat: no-repeat, no-repeat;
     background-position: center bottom, 0 -56px;
     background-size: 1200px auto, auto auto;
-    padding-top: 76px; 
-    padding-bottom: 71px;
+    padding-top: 62px; 
+    padding-bottom: 57px;
     text-align: center;
 }
 
@@ -603,6 +603,39 @@ body > .container {
     margin-bottom: 20px;
     width: 310px;
 }
+
+.feature-1 p {
+    width: 300px;
+}
+
+.feature-2 p {
+}
+
+.feature-3 p {
+    width: 280px;
+}
+
+.feature-4 p {
+    width: 270px;
+}
+
+.feature-5 p {
+    width: 255px;
+}
+
+.feature-6 p {
+}
+
+.feature-7 p {
+    width: 300px;
+}
+
+.feature-8 p {
+}
+
+
+
+
 
 .feature-regular {
     width: 400px;
