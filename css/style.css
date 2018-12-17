@@ -1,7 +1,6 @@
 body {
     padding: 0px;
     margin: 0px;
-    min-width: 1200px;
     font-family: "PT Sans", Arial, sans-serif;
     text-transform: uppercase;
     color: #000000;
@@ -1018,8 +1017,8 @@ fieldset.properties {
     display: flex;
 }
 
-span.on,
-span.off {
+.property-checkbox-on,
+.property-checkbox-off {
  width: 27px;   
 }
 
@@ -1476,8 +1475,8 @@ button.price-submit:focus {
 }
 
 .form-animation-error {
-            animation-name: form-error;
-            animation-duration: 0.3s;
+    animation-name: form-error;
+    animation-duration: 0.3s;
 }
 
 @-webkit-keyframes form-error {
