@@ -81,48 +81,48 @@ input:focus {
     list-style: none;
 }
 
-a.footer-social-link {
+.footer-social-link {
     background-color: #81b3d2;
 }
 
-a.footer-social-link:hover {
+.footer-social-link:hover {
     background-color: #669ec0;
 }
 
-a.footer-social-link:active,
-a.footer-social-link:focus {
+.footer-social-link:active,
+.footer-social-link:focus {
     background-color: #5496bd;
     outline: none;
 }
 
-a.footer-social-link svg {
+.footer-social-link svg {
     fill: #ffffff;
 }
 
-a.footer-social-link:hover svg {
+.footer-social-link:hover svg {
     fill: #ffffff;
 }
 
-a.footer-social-link:active svg,
-a.footer-social-link:focus svg {
+.footer-social-link:active svg,
+.footer-social-link:focus svg {
     fill: #8cb8d1;
 }
 
-a.footer-copyright-logo svg {
+.footer-copyright-logo svg {
     fill: #000000;
 }
 
-a.footer-copyright-logo:hover svg {
+.footer-copyright-logo:hover svg {
     fill: #81b3d2;
 }
 
-a.footer-copyright-logo:active svg,
-a.footer-copyright-logo:focus svg {
+.footer-copyright-logo:active svg,
+.footer-copyright-logo:focus svg {
     fill: #cacaca;
 }
 
-a.footer-copyright-logo:focus,
-a.footer-copyright-logo:active {
+.footer-copyright-logo:focus,
+.footer-copyright-logo:active {
     outline: none;
 }
 
@@ -163,7 +163,7 @@ a.footer-copyright-logo:active {
     line-height: 36px;
 }
 
-a.hotel-search-button {
+.hotel-search-button {
     background-color: #766357;
     display: block;
     -webkit-box-sizing: border-box;
@@ -176,13 +176,13 @@ a.hotel-search-button {
     text-align: center;
 }
 
-a.hotel-search-button:hover {
+.hotel-search-button:hover {
     color: #ffffff;
     background-color: #604e43;
 }
 
-a.hotel-search-button:active,
-a.hotel-search-button:focus {
+.hotel-search-button:active,
+.hotel-search-button:focus {
     color: rgba(255, 255, 255, 0.3);
     outline: none;
     background-color: #503e33;
