@@ -19,21 +19,17 @@ a:visited {
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-
-  -webkit-clip-path: inset(100%);
-
-          clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 img {
@@ -142,7 +138,6 @@ a.footer-copyright-logo:active {
 .hotel-search-intro {
     color: #333333;
     line-height: 24px;
-    
     text-align: center;
     background-color: #ffffff;
     display: -webkit-box;
@@ -302,7 +297,6 @@ button.calendar:hover svg {
 button.calendar:active svg {
     fill: #81b3d2;
 }
-
 
 .people-count > :nth-child(n) {
     background-color: #f2f2f2;
@@ -575,6 +569,23 @@ body > .container {
     width: 310px;
 }
 
+.feature-1 h3 {
+}
+
+.feature-2 h3 {
+    width: 170px;
+}
+
+.feature-3 h3 {
+}
+
+.feature-4 h3 {
+}
+
+.feature-5 h3 {
+    width: 135px;
+}
+
 .feature-1 p {
     width: 300px;
 }
@@ -681,8 +692,6 @@ body > .container {
     background-repeat: no-repeat;
 }
 
-
-
 .hotel-search {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -755,7 +764,6 @@ body > .container {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-
 
 .date-input {
     -webkit-box-sizing: border-box;
@@ -941,10 +949,8 @@ body > .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;   
-    
     line-height: 21px;
     color: #fff;
-    
     padding-left: 72px;
     padding-right: 72px;
     padding-top: 27px;
@@ -970,7 +976,6 @@ body > .container {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    
 }
 
 fieldset.properties {
@@ -1046,11 +1051,8 @@ fieldset.price {
             box-sizing: border-box;
     height: 35px;
     width: 318px;
-    
     display: -webkit-box;
-    
     display: -ms-flexbox;
-    
     display: flex;
     position: relative;
 }
@@ -1457,26 +1459,44 @@ button.price-submit:focus {
 }
 
 .form-animation-open {
-    animation-name: form-open;
-    animation-duration: 0.5s;
+    -webkit-animation-name: form-open;
+            animation-name: form-open;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
 }
+
+@-webkit-keyframes form-open {
+    from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+    100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
+}
+
 @keyframes form-open {
-  from { transform: translateY(-100%); }
-  100% { transform: translateY(0px); }
+    from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+    100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
 }
 
 .form-animation-close {
-    animation-name: form-close;
-    animation-duration: 0.5s;
+    -webkit-animation-name: form-close;
+            animation-name: form-close;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
 }
+
+@-webkit-keyframes form-close {
+    from { -webkit-transform: translateY(0px); transform: translateY(0px); opacity: 1; }
+    100% { -webkit-transform: translateY(-100%); transform: translateY(-100%); opacity: 1; }  
+}
+
 @keyframes form-close {
-  from { transform: translateY(0px); opacity: 1; }
-  100% { transform: translateY(-100%); opacity: 1; }  
+    from { -webkit-transform: translateY(0px); transform: translateY(0px); opacity: 1; }
+    100% { -webkit-transform: translateY(-100%); transform: translateY(-100%); opacity: 1; }  
 }
 
 .form-animation-error {
-    animation-name: form-error;
-    animation-duration: 0.3s;
+    -webkit-animation-name: form-error;
+            animation-name: form-error;
+    -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
 }
 
 @-webkit-keyframes form-error {
